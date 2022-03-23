@@ -1,0 +1,19 @@
+<section class="s-md bg-gray-200">
+  <div class="max-w-screen-xl mx-auto space-y-12">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      {% for item in item.cards %}
+      <div class="bg-white cd-md w-full rounded-2xl shadow-lg col-span-full md:col-span-6 md:first:col-start-4 md:first:row-start-1
+      md:row-start-2">
+        <h3>{{ item.heading | smartify }}</h3>
+        <div class="text-gray-600">{{ item.text_markdown | markdownify }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% include icons/grouping.svg class="mx-auto w-full s-xs py-0 text-gray-500" %}
+    <div class="text-center space-y-8">
+      <h2 class="max-w-xl mx-auto">{{ item.heading | smartify }}</h2>
+      <div class="max-w-screen-md mx-auto text-gray-600 text-xl lg:text-2xl">{{ item.text_markdown | markdownify }}</div>
+      <a class="btn btn-purple-500 btn--outlined" href="{{ item.button.url }}">{{ item.button.text }}</a>
+    </div>
+  </div>
+</section>

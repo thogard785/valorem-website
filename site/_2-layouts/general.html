@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% include partials/shortcodes.html %}
+
+{% include sections/hero.html %}
+{% for item in page_blocks %}
+  {% case item._id %}
+    {% when "use_cases" %}
+      {% include sections/use_cases.html %}
+    {% when "roadmap" %}
+      {% include sections/roadmap.html %}
+    {% when "partner_featured" %}
+      {% include sections/partner_featured.html %}
+    {% when "cta" %}
+      {% include sections/cta.html %}
+  {% endcase %}
+{% endfor %}

@@ -1,0 +1,65 @@
+{% capture mobileMenu %}
+<div class="lg:hidden absolute left-0 right-0 w-full s-xs py-0 z-50">
+  <div
+    class="transform origin-top shadow-lg rounded-b-xl lg:rounded-b-2xl bg-white"
+    x-show="showMenu"
+    x-transition:enter="transition-default"
+    x-transition:enter-start="opacity-0 -translate-y-3"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition-default"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-3">
+    <nav class="s-sm py-10 text-center flex flex-col space-y-6" aria-label="Main">
+      {% for item in headerNav %}
+      <a href="{{ item.url }}" class="focus:text-purple-500 focus:outline-none">{{ item.name }}</a>
+      {% endfor %}
+      {% for item in headerCta limit:1 %}
+      <a href="{{ item.url }}"
+        class="btn btn-purple-500 text-base px-5 py-2 rounded-xl mx-auto">{{ item.name }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</div>
+{% endcapture %}
+
+{% capture mobileMenuButton %}
+<div class="flex lg:hidden items-center justify-end space-x-8">
+  <button
+    aria-label="Navigation menu"
+    type="button"
+    class="inline-flex items-center justify-center p-1 hover:text-purple-500 focus:outline-none transition-default"
+    x-on:click="showMenu = !showMenu"
+    :class="{'text-gray-900': showMenu}">
+    <svg x-show="!showMenu" class="h-8 w-8" viewBox="0 0 32 32" fill="none" stroke="currentColor">
+      <line y1="10.5" x2="32" y2="10.5" stroke-width="3"/>
+      <line y1="21.5" x2="32" y2="21.5" stroke-width="3"/>
+    </svg>
+    <svg x-show="showMenu" class="h-8 w-8" fill="none" viewbox="0 0 32 32" stroke="currentColor">
+      <line x1="4.81066" y1="4.43934" x2="27.4381" y2="27.0668" stroke-width="3"/>
+      <line x1="4.68934" y1="27.4393" x2="27.3168" y2="4.81192" stroke-width="3"/>
+    </svg>
+  </button>
+</div>
+{% endcapture %}
+<header
+  class="s-xxs py-0 absolute w-full mt-8 z-50 transition-default"
+  x-data="{showMenu: false}">
+  <div class="bg-white rounded-xl lg:rounded-2xl s-xs max-w-screen-xl mx-auto transition-default"
+  :class="{'shadow-md rounded-b-none': showMenu}">
+    <nav class="flex justify-between items-center relative" aria-label="Main">
+      <a href="/" aria-label="Home page" class="text-purple-500">{% include_cached icons/logo.svg class="h-6 lg:h-8 w-auto" %}</a>
+      <div class="z-10 hidden lg:flex items-center justify-end space-x-8 group">
+        {% for item in headerNav %}
+        <a href="{{ item.url }}"
+          class="p-2 rounded {% if item.url == currentPage %}bg-gray-200 group-hover:bg-white hover:!bg-gray-200{% else %}bg-white hover:bg-gray-200{% endif %}">{{ item.name }}</a>
+        {% endfor %}
+        {% for item in headerCta limit:1 %}
+        <a href="{{ item.url }}"
+          class="btn btn-purple-500 text-base px-5 py-2 rounded-xl">{{ item.name }}</a>
+        {% endfor %}
+      </div>
+      {{ mobileMenuButton }}
+    </nav>
+  </div>
+  {{ mobileMenu }}
+</header>

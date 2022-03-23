@@ -1,0 +1,10 @@
+<section class="s-md bg-gradient-default from-purple-400 to-white">
+  <div class="max-w-4xl mx-auto text-center space-y-12">
+    <h2 class="text-gray-900">{{ item.heading | smartify }}</h2>
+    <div>
+      {% for item in item.buttons limit:2 %}
+      <a href="{{ item.url }}" class="btn btn-purple-500 btn--large even:btn--outlined">{{ item.text }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

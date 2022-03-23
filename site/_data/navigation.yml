@@ -1,0 +1,32 @@
+navigation_links:
+  - url: /about/
+    name: About
+    visible:
+      - header
+      - footer
+    group:
+      - main
+  - url: /news/
+    name: News
+    visible:
+      - header
+      - footer
+    group:
+      - main
+  - url: /docs/
+    name: Docs
+    visible:
+      - header
+      - footer
+    group:
+      - main
+  - url: https://app.valorem.xyz/
+    name: Launch app
+    visible:
+      - header
+      - footer
+    group:
+      - cta
+footer_groups:
+  - main
+  - social

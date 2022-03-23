@@ -1,0 +1,25 @@
+<section class="s-md bg-white">
+  <div class="max-w-screen-xl mx-auto space-y-16">
+    <div class="space-y-8 text-center max-w-screen-md mx-auto">
+      <h2>{{ item.heading | smartify }}</h2>
+      <div class="text-gray-600 text-xl lg:text-2xl">{{ item.text_markdown | markdownify }}</div>
+    </div>
+    <div class="relative py-16 md:py-0 text-center md:text-left grid grid-cols-1 md:grid-cols-2 gap-12 z-0">
+      <div class="text-gray-500 absolute h-full left-0 right-0 mx-auto flex flex-col items-center pointer-events-none -z-50">
+        <div class="w-4 h-4 flex-shrink-0 relative bg-purple-500 rounded-full"></div>
+        {% include icons/roadmap.svg class="relative h-full" %}
+        <div class="w-4 h-4 flex-shrink-0 relative bg-purple-500 rounded-full -top-1"></div>
+      </div>
+      {% for item in item.events %}
+      <div class="md:max-w-lg cd-sm bg-white space-y-6{% unless forloop.first %} md:row-start-[{{ forloop.index }}]{% endunless %}{% cycle ' md:justify-self-end',' md:col-start-2' %}">
+        {% if item.eta %}<div class="label text-gray-500">{{ item.eta }}</div>{% endif %}
+        <h3>{{ item.heading | smartify }}</h3>
+        <div class="text-gray-600">{{ item.text_markdown | markdownify }}</div>
+        {% if item.button %}
+        <a href="{{ item.button.url }}" class="btn btn-purple-500 btn--outlined">{{ item.button.text }}</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
