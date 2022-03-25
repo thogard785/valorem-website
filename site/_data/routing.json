@@ -1,9 +1,0 @@
-{
-  "routes": [
-    {
-      "from": "/about-me/",
-      "to": "/about/",
-      "status": 301
-    }
-  ]
-}

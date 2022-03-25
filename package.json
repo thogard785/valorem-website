@@ -1,7 +1,7 @@
 {
-  "name": "jekyll-boilerplate",
+  "name": "valorem-site",
   "version": "1.0.0",
-  "description": "boilerplate for use with cloudcannon, tailwind and gulp",
+  "description": "valorem marketing site built on jekyll, based on jon's boilerplate for jekyll & tailwindcss",
   "main": "gulpfile.babel.js",
   "scripts": {
     "serve": "gulp serve",

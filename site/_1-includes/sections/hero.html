@@ -1,42 +1,12 @@
 {% assign item = page.hero %}
-{% case page.collection %}
-  {% when "services" %}
-  <section class="s-md bg-blue-600 text-white relative">
-    <div class="max-w-screen-xl mx-auto">
-      <div class="max-w-screen-sm space-y-8">
-        <h1 class="text-white">{{item.title|default:page.title|smartify}}</h1>
-        <div class="text-2xl lg:text-3xl !leading-snug">{{item.text_markdown|default:page.description|markdownify}}</div>
-        {% for item in item.buttons limit:2 %}
-        <a href="{{item.url}}" class="btn btn-cream even:btn--outlined">{% include icons/social.html class="mr-4" %}{{item.text}}</a>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  {% when "posts" %}
-  <section class="s-md {% if page.categories contains 'cases' %}bg-blue-600{% else %}bg-green-500{% endif %} text-white relative">
-    <div class="max-w-screen-xl mx-auto">
-      <div class="max-w-screen-md space-y-16">
-        <h1 class="text-white">{{item.title|default:page.title|smartify}}</h1>
-        <div class="label flex flex-col md:flex-row gap-4 md:gap-24">
-          <div>
-            <div class="flex items-center">{% include icons/clock.svg class="h-5 w-auto mr-3" %}{{page.date|date_to_string: "ordinal", "US"}}</div>
-            <div class="flex items-center">{% include icons/hourglass.svg class="h-5 w-auto mr-3" %}{% include partials/read-time.html %}</div>
-          </div>
-          <div class="flex gap-3 md:gap-4 items-center">
-            <div>
-            {% responsive_image_block %}
-              path: {{settings.author_details.image|remove_first:"/"}}
-              alt: "{{settings.author_details.name}}"
-              class: "rounded-full h-5 w-5 md:h-14 md:w-14"
-            {% endresponsive_image_block %}
-            </div>
-            <div>
-              <div class="hidden md:block">Published by</div>
-              <div class="normal-case">{{settings.author_details.name}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+{% case page.name %}
+  {% when "about.md" %}
+  <section class="s-hero pb-48 sm:pb-56 bg-gradient-default from-purple-500 to-white">
+    <div class="max-w-screen-lg mx-auto text-center space-y-16">
+      <h1 class="text-gray-900">{{ item.heading | default: page.title | smartify }}</h1>
+      {% if item.text_markdown %}
+      <div class="max-w-3xl mx-auto text-xl lg:text-2xl">{{ item.text_markdown | default: page.description | markdownify }}</div>
+      {% endif %}
     </div>
   </section>
   {% else %}
@@ -45,7 +15,7 @@
       <div class="max-w-screen-lg space-y-16">
         <h1 class="text-gray-900">{{ item.heading | default: page.title | smartify }}</h1>
         {% if item.text_markdown %}
-        <div class="text-2xl lg:text-3xl !leading-snug">{{ item.text_markdown | default: page.description | markdownify }}</div>
+        <div class="text-xl lg:text-2xl">{{ item.text_markdown | markdownify }}</div>
         {% endif %}
         <div>
           {% for item in item.buttons limit:2 %}

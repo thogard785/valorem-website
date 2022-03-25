@@ -12,7 +12,13 @@ layout: default
       {% include sections/roadmap.html %}
     {% when "partner_featured" %}
       {% include sections/partner_featured.html %}
+    {% when "partners_all" %}
+      {% include sections/partners_all.html %}
     {% when "cta" %}
       {% include sections/cta.html %}
+    {% when "connect" %}
+      {% include sections/connect.html %}
+    {% when "docs_feed" %}
+      {% include sections/docs_feed.html %}
   {% endcase %}
 {% endfor %}

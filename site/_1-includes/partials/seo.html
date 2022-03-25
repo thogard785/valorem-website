@@ -32,7 +32,7 @@
 {%- endcapture -%}
 <title>{{seoTitleAppended|strip}}</title>
 <meta property="og:title" content="{{seoTitle}}" />
-<meta name="author" content="{{site.data.global_settings.author_details.name}}" />
+<meta name="author" content="{{site.data.global_settings.author_details.name | default:'Alcibiades'}}" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="{{seoDescription}}" />
 <meta property="og:description" content="{{seoDescription}}" />

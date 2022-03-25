@@ -2,14 +2,5 @@ site:
   title: Valorem Protocol
   description: |
     Write permissionless physically settled options on any ERC20 token.
-author_details:
-  name: Alcibiades
-  image: /assets/images/people/jimmy.jpg
-article_cta:
-  label: Keep up with my essays
-  title: Join my newsletter
-  text_markdown: |
-    In addition to sending you a long-form essay every 5–6 weeks, I will also let you know when I have a new book coming out.
-  button:
-    text: Subscribe now
-    url: /email/
+footer_markdown: |
+  Valorem helps DeFi power users pursue advanced hedging strategies by writing their own physically settled options permissionlessly—on any ERC20 token.

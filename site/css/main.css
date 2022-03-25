@@ -248,7 +248,7 @@ html {
     @apply mb-0;
   }
   .prose >* {
-    @apply w-full max-w-4xl mx-auto;
+    @apply w-full max-w-2xl mx-auto;
   }
   .prose >*:not(img):not(figure):not(div):not(aside) {
     @apply w-full max-w-2xl mx-auto;
@@ -256,15 +256,15 @@ html {
   .prose .twitter-tweet {
     @apply !w-full !max-w-2xl !mx-auto;
   }
-  .prose a:not(.btn):not(.footnote-backref):not([id^="fnref"]):not([id*=" fnref"]),
+  .prose a:not(.btn),
   .link {
-    @apply text-purple-400 underline transition-default;
+    @apply text-purple-500 underline transition-default;
   }
   .prose a:not(.btn):hover,
   .prose a:not(.btn):active,
   .link:hover,
   .link:active {
-    @apply text-purple-500;
+    @apply text-purple-600;
   }
   .prose h1:not(:first-child),
   .prose h2:not(:first-child),
@@ -292,7 +292,7 @@ html {
     @apply list-decimal;
   }
   .prose hr {
-    @apply my-10 text-gray-300;
+    @apply my-10 border-gray-400;
   }
   .prose blockquote {
 		@apply pl-4 -ml-4 mb-5 py-1 italic border-l-2 border-gray-300;
