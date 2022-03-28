@@ -1,6 +1,6 @@
 ---
 title: About us
-description: Funded in part by Harmony, we are building infrastructure for a more robust options ecosystem in DeFi.
+description: We are building infrastructure for a more robust options ecosystem in DeFi.
 hero:
   heading: Valorem is a protocol for writing physically settled options.
   text_markdown: |
@@ -50,8 +50,8 @@ page_blocks:
         subheading: Keep up to date
         url: https://twitter.com/valorem_app
   - _id: cta
-    heading: Getting started is easy. Connect a wallet and write your first custom option in minutes.
+    heading: App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.
     buttons:
-      - text: Launch app
-        url: https://app.valorem.xyz
+      - text: Join Discord
+        url: https://discord.com/
 ---

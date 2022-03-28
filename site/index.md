@@ -3,10 +3,10 @@ title:
 description:
 hero:
   heading: Permissionless physically settled options, on any ERC20 token.
-  text_markdown:
+  text_markdown: Join our Discord server for early beta access to our testnet release.
   buttons:
-    - text: Launch app
-      url: https://app.valorem.xyz
+    - text: Join Discord
+      url: https://discord.com
 page_blocks:
   - _id: use_cases
     cards:
@@ -56,8 +56,8 @@ page_blocks:
       text: See more partners
       url: /about/
   - _id: cta
-    heading: Getting started is easy. Connect a wallet and write your first custom option in minutes.
+    heading: App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.
     buttons:
-      - text: Launch app
+      - text: Join Discord
         url: https://app.valorem.xyz
 ---
