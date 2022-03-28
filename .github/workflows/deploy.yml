@@ -1,0 +1,48 @@
+name: 'Build and deploy the site'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: ${{ !env.ACT && 'npm' || '' }}
+      - name: Install npm packages
+        run: npm install
+      - name: Build with npm
+        run: npm build
+      - name: Update apt repos
+        run: sudo apt-get update
+      - name: Install imagemagick dependencies
+        run: sudo apt-get -y install imagemagick inkscape libmagickcore-dev libmagickwand-dev build-essential
+      - name: Configure ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - name: Install bundle command
+        run: gem install bundler
+      - name: Install ruby dependencies
+        run: bundle install
+      - name: Build the site via Jekyll
+        run: bundle exec jekyll build
+      - name: Run npm ci
+        run: npm ci
+      - name: Run gulp
+        run: gulp
+      - name: Copy the CNAME and other build additions to the site
+        run: cp ./BuildAdditions/* ./_site/
+      - name: Deploy the site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
+          publish_branch: gh_pages
