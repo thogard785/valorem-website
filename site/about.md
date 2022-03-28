@@ -4,7 +4,7 @@ description: Funded in part by Harmony, we are building infrastructure for a mor
 hero:
   heading: Valorem is a protocol for writing physically settled options.
   text_markdown: |
-    Funded in part by Harmony, we are building infrastructure for a more robust options ecosystem in DeFi. Our partners and contributors are listed below.
+    We are building infrastructure for a more robust options ecosystem in DeFi. Find out more about our partners and contributors below.
 page_blocks:
   - _id: partners_all
     cards:
