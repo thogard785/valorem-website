@@ -54,15 +54,6 @@ navigation_links_docs:
     name: Introduction to Valorem
     group:
       - documentation
-  - url: /docs/getting-started/
-    name: Getting started
-    group:
-      - documentation
-  - url: /docs/getting-started/
-    name: Getting started
-    group:
-      - other
 
 docs_groups:
   - documentation
-  - other
