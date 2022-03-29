@@ -43,8 +43,8 @@
     <link rel="alternate" type="application/atom+xml" title="Valorem Protocol" href="/feed.xml" title="Valorem Protocol">
 
     
-    <title>Introduction to Valorem | Valorem Protocol</title>
-<meta property="og:title" content="Introduction to Valorem
+    <title>What is Valorem? | Valorem Protocol</title>
+<meta property="og:title" content="What is Valorem?
 " />
 <meta name="author" content="Alcibiades" />
 <meta property="og:locale" content="en_US" />
@@ -52,13 +52,13 @@
 " />
 <meta property="og:description" content="Permissionless physically settled options, on any ERC20 token.
 " />
-<link rel="canonical" href="https://valorem.xyz/docs/introduction/" />
-<meta property="og:url" content="https://valorem.xyz/docs/introduction/" />
+<link rel="canonical" href="https://valorem.xyz/docs/what-is-valorem/" />
+<meta property="og:url" content="https://valorem.xyz/docs/what-is-valorem/" />
 <meta property="og:site_name" content="Valorem Protocol" />
 <meta property="og:image" content="" /><meta property="og:type" content="website" /><meta property="article:published_time" content="2022-03-27T19:00:00-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="" />
-<meta property="twitter:title" content="Introduction to Valorem
+<meta property="twitter:title" content="What is Valorem?
 " />
 <meta name="google-site-verification" content="" />
 
@@ -66,7 +66,7 @@
     {
         "@context":"https://schema.org",
         "@type":"WebPage",
-        "name":"Introduction to Valorem",
+        "name":"What is Valorem?",
         "description":"Permissionless physically settled options, on any ERC20 token.
 ",
         "publisher":{
@@ -159,7 +159,7 @@
       <div class="label">Documentation</div>
       
       
-      <a href="/docs/introduction/" class="focus:text-purple-500 focus:outline-none">Introduction to Valorem</a>
+      <a href="/docs/introduction/" class="focus:text-purple-500 focus:outline-none">What is Valorem?</a>
       
       </div>
       
@@ -207,7 +207,7 @@
           
           
           <li>
-            <a href="/docs/introduction/" class="block py-3 px-6 rounded-md text-gray-900 bg-gray-cool">Introduction to Valorem</a>
+            <a href="/docs/introduction/" class="block py-3 px-6 rounded-md hover:bg-gray-200">What is Valorem?</a>
           </li>
           
         </ol>
@@ -216,26 +216,59 @@
     </nav>
     <article class="lg:flex-grow">
       <div class="prose">
-        <h1>Introduction to Valorem</h1>
+        <h1>What is Valorem?</h1>
         <hr>
-        <h2 id="valorem-v1-options">Valorem V1 Options</h2>
+        <h2 id="introduction">Introduction</h2>
 
-<p>Valorem Options V1 is a DeFi money lego enabling writing covered call and covered put, 
-physically settled, american or european options. All written options are fully collateralized 
-against an ERC-20 underlying asset and exercised with an ERC-20 exercise asset using a VRF 
-random number per unique option type for fair settlement. Options contracts are issued as 
-fungible ERC-1155 tokens, with each token representing a contract. Option writers are 
-additionally issued an ERC-1155 NFT representing a lot of contracts written for claiming 
-collateral and exercise assignment. This design eliminates the need for market price oracles, 
-and allows for permission-less writing, and gas efficient transfer, of a broad swath of 
-traditional options.</p>
+<p>The Valorem protocol is a peer-to-peer system designed for settling options 
+on ERC-20 tokens. The protocol is implemented as a set of persistent, 
+non-upgradable smart contracts; designed to prioritize censorship resistance, 
+security, self-custody, and to function without any intermediaries who may 
+restrict access.</p>
+
+<p>The Valorem protocol enables writing covered call and 
+covered put, physically settled, options. All written options are fully 
+collateralized against an ERC-20 underlying asset and exercised with an ERC-20 
+exercise asset using a VRF random number per unique option type for fair 
+settlement.</p>
+
+<p>Options contracts are issued as fungible ERC-1155 tokens, herein referred to as 
+vTokens, with each token representing a contract. Option writers are 
+additionally issued an ERC-1155 NFT representing a lot of contracts written 
+for claiming collateral and exercise assignment. This design eliminates the 
+need for market price oracles, and allows for permission-less writing, and 
+gas efficient transfer, of a broad swath of traditional and exotic options.</p>
+
+<h2 id="how-does-the-valorem-protocol-compare-to-existing-options-settlement-systems">How does the Valorem protocol compare to existing options settlement systems?</h2>
+
+<h3 id="permissionless">Permissionless</h3>
+
+<p>The Valorem protocol is designed to be permissionless. This permissionless 
+design means that the protocol is open to public use, with no ability to restrict 
+who can or cannot use it. Anyone can create new options chains, write options, 
+exercise the options they hold, transfer those options, and transfer claims 
+generated during writing.</p>
+
+<h3 id="fully-collateralized">Fully Collateralized</h3>
+
+<p>The protocol being fully collateralized means that options can be exercised at 
+any time prior to expiry and after the exercise timestamp, without the risk of 
+default. This design choice was made due to the nature of decentralization and 
+the permissionless nature of the protocol.</p>
+
+<h3 id="flexible">Flexible</h3>
+
+<p>The Valorem protocol allows writers to write options on any ERC-20 pair, with 
+any strike price, any expiry timestamp at least 24 hours in the future, and 
+any exercise timestamp at least 24 hours before expiry. This flexibility enables 
+the settlement layer to be used in a large range of applications.</p>
 
       </div>
     </article>
     <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
       <div class="fixed">
         <div class="label mb-6">On this page</div>
-        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#valorem-v1-options" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Valorem V1 Options</a></li></ol>
+        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a></li><li class=""><a href="#how-does-the-valorem-protocol-compare-to-existing-options-settlement-systems" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">How does the Valorem protocol compare to existing options settlement systems?</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#permissionless" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Permissionless</a></li><li class=""><a href="#fully-collateralized" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Fully Collateralized</a></li><li class=""><a href="#flexible" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Flexible</a></li></ol></li></ol>
       </div>
     </nav>
   </div>
