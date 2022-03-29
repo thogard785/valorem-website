@@ -6,7 +6,7 @@ hero:
   text_markdown: Join our Discord server for early access to our testnet release.
   buttons:
     - text: Join Discord
-      url: https://discord.com
+      url: https://discord.gg/xwmCSbWK
 page_blocks:
   - _id: use_cases
     cards:
@@ -47,9 +47,9 @@ page_blocks:
           Be a part of what comes next on our roadmap by joining our chat and letting us know what you'd like to see.
         button:
           text: Join Discord
-          url: https://discord.com
+          url: https://discord.gg/xwmCSbWK
   - _id: partner_featured
-    label: Funded in part by 
+    label: In partnership with
     image_path: /assets/images/partners/harmony.png
     image_alt: Harmony
     button:
@@ -59,5 +59,5 @@ page_blocks:
     heading: App coming soon. In the meantime, join our Discord server to get early access to our testnet release.
     buttons:
       - text: Join Discord
-        url: https://app.valorem.xyz
+        url: https://discord.gg/xwmCSbWK
 ---
