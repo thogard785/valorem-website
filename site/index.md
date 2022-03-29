@@ -3,25 +3,25 @@ title:
 description:
 hero:
   heading: Permissionless physically settled options, on any ERC20 token.
-  text_markdown: Join our Discord server for early beta access to our testnet release.
+  text_markdown: Join our Discord server for early access to our testnet release.
   buttons:
     - text: Join Discord
       url: https://discord.com
 page_blocks:
   - _id: use_cases
     cards:
-      - heading: Long straddle ApeCoin 1
+      - heading: Vesting Protocol Options 
         text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
-      - heading: Long straddle ApeCoin 2
+          Presently, protocols give away token grants. Valorem enables traditional strike option equity grants on ERC-20 Tokens.
+      - heading: Uniswap V3 Liquidity Hedging 
         text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
-      - heading: Long straddle ApeCoin 3
+          Use a long straddle to hedge Uniswap V3 liquidity pools. This strategy is a suitable hedge for remaining in position at either end of a concentrated LP.
+      - heading: Principal Protected Notes 
         text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
-    heading: This, and much more, is possible with Valorem.
+          Use Alchemix to borrow against future yield, buy a Valorem call option with the yield, and voila, a principal protected note.
+    heading: This, and much more, will be possible with Valorem.
     text_markdown: |
-      We’re building Valorem to unlock advanced hedging strategies in DeFi and enable more efficient yield on-chain. When you can write your own options permissionlessly, the possibilities are endless.
+      We’re building Valorem to unlock advanced hedging strategies in DeFi and enable more efficient yield on-chain. This flexible primitive can be leveraged to create new defi components.
     button:
       text: Read docs
       url: /docs/
@@ -32,31 +32,31 @@ page_blocks:
     events:
       - heading: Testnet launch
         text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
+          The Valorem Options V1 contracts will launch on the Harmony testnet and be available to users so that we can get feedback and iterate.
         eta: April 2022
-      - heading: An exciting thing happens
+      - heading: UI App 
         text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
+          Our react user interface for options writers and holders will be ready to use.
+        eta: May 2022
+      - heading: Mainnet Launch 
+        text_markdown: |
+          We'll have a completed audit, and the settlement layer will launch on mainnet.
         eta: June 2022
-      - heading: Sometimes these span two lines, like here
+      - heading: Join the future of DeFi derivatives
         text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
-        eta: August 2022
-      - heading: Help determine the future of DeFi options writing
-        text_markdown: |
-          Describe a possible use case for Valorem in straightforward lanauge, mi condimentum auctor. Viverra quis vitae, nibh in. Massa lacus, sit morbi ut orci, consequat. Morbi elementum ultricies molestie aenean.
+          Be a part of what comes next on our roadmap by joining our chat and letting us know what you'd like to see.
         button:
           text: Join Discord
           url: https://discord.com
   - _id: partner_featured
-    label: Funded in part by
+    label: Funded in part by 
     image_path: /assets/images/partners/harmony.png
     image_alt: Harmony
     button:
       text: See more partners
       url: /about/
   - _id: cta
-    heading: App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.
+    heading: App coming soon. In the meantime, join our Discord server to get early access to our testnet release.
     buttons:
       - text: Join Discord
         url: https://app.valorem.xyz

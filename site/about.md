@@ -1,10 +1,10 @@
 ---
 title: About us
-description: We are building infrastructure for a more robust options ecosystem in DeFi.
+description: We are building infrastructure for a more robust derivatives ecosystem in DeFi.
 hero:
   heading: Valorem is a protocol for writing physically settled options.
   text_markdown: |
-    We are building infrastructure for a more robust options ecosystem in DeFi. Find out more about our partners and contributors below.
+    We are building infrastructure for a more robust derivatives ecosystem in DeFi. Find out more about our partners and contributors below.
 page_blocks:
   - _id: partners_all
     cards:
@@ -26,14 +26,8 @@ page_blocks:
         image_path: /assets/images/partners/felix.jpg
         image_alt: "Felix Hill’s profile picture"
         heading: Felix Hill
-        subheading:
-        url:
-      - label: Collaborator
-        image_path: /assets/images/partners/felix.jpg
-        image_alt:
-        heading:
-        subheading:
-        url:
+        subheading: "@blockchainbyt"
+        url: https://twitter.com/BlockchainByt
       - label: Collaborator
         logo_path: /assets/images/partners/cultmethod.svg
         logo_alt: CultMethod logo
@@ -41,17 +35,17 @@ page_blocks:
   - _id: connect
     heading: Want to get involved?
     text_markdown: |
-      Help us enable more efficient yield on-chain. Join our Discord server, get involved in the conversation, or make direct contributions to the project.
+      Help us enable more efficient on-chain derivatives. Join our Discord server, get involved in the conversation, or make direct contributions to the project.
     links:
       - heading: Discord
         subheading: Join the conversation
-        url: https://discord.com
+        url: https://discord.gg/xwmCSbWK
       - heading: Twitter
         subheading: Keep up to date
-        url: https://twitter.com/valorem_app
+        url: https://twitter.com/valoremxyz
   - _id: cta
     heading: App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.
     buttons:
       - text: Join Discord
-        url: https://discord.com/
+        url: https://discord.gg/xwmCSbWK
 ---
