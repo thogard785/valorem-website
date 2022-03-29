@@ -22,7 +22,7 @@
   </section>
   <section class="s-xs mt-6">
     <div class="max-w-screen-xl mx-auto flex flex-col space-y-2 text-center md:text-left md:space-y-0 md:flex-row md:justify-between">
-      <div>© {{ "now"|date:"%Y" }}, {{ site.data.global_settings.site.title }}. All rights reserved.</div>
+      <div>© {{ "now"|date:"%Y" }}, {{ site.data.global_settings.site.copyright }}. All rights reserved.</div>
       <nav class="flex divide-x divide-gray-500 divide-opacity-25 justify-center md:text-right md:justify-end" aria-label="Subfooter">
         {% for item in subfooterNav %}
           <a href="{{item.url}}" class="flex-none px-5 first:pl-0 last:pr-0 hover:text-purple-500 focus:outline-none focus:text-purple-500">{{item.name}}</a>
