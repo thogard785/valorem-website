@@ -48,14 +48,14 @@
 " />
 <meta name="author" content="Alcibiades" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Here is a little bit of copy to show what it looks like.
+<meta name="description" content="Permissionless physically settled options, on any ERC20 token.
 " />
-<meta property="og:description" content="Here is a little bit of copy to show what it looks like.
+<meta property="og:description" content="Permissionless physically settled options, on any ERC20 token.
 " />
 <link rel="canonical" href="https://valorem.xyz/docs/introduction/" />
 <meta property="og:url" content="https://valorem.xyz/docs/introduction/" />
 <meta property="og:site_name" content="Valorem Protocol" />
-<meta property="og:image" content="" /><meta property="og:type" content="website" /><meta property="article:published_time" content="2022-02-28T18:00:00-05:00" />
+<meta property="og:image" content="" /><meta property="og:type" content="website" /><meta property="article:published_time" content="2022-03-27T19:00:00-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="" />
 <meta property="twitter:title" content="Introduction to Valorem
@@ -67,7 +67,7 @@
         "@context":"https://schema.org",
         "@type":"WebPage",
         "name":"Introduction to Valorem",
-        "description":"Here is a little bit of copy to show what it looks like.
+        "description":"Permissionless physically settled options, on any ERC20 token.
 ",
         "publisher":{
             "@type":"Organization",
@@ -161,16 +161,6 @@
       
       <a href="/docs/introduction/" class="focus:text-purple-500 focus:outline-none">Introduction to Valorem</a>
       
-      <a href="/docs/getting-started/" class="focus:text-purple-500 focus:outline-none">Getting started</a>
-      
-      </div>
-      
-      <div class="flex flex-col gap-3">
-      <div class="label">Other</div>
-      
-      
-      <a href="/docs/getting-started/" class="focus:text-purple-500 focus:outline-none">Getting started</a>
-      
       </div>
       
       <hr class="border-gray-400">
@@ -220,20 +210,6 @@
             <a href="/docs/introduction/" class="block py-3 px-6 rounded-md text-gray-900 bg-gray-cool">Introduction to Valorem</a>
           </li>
           
-          <li>
-            <a href="/docs/getting-started/" class="block py-3 px-6 rounded-md hover:bg-gray-200">Getting started</a>
-          </li>
-          
-        </ol>
-        
-        <div class="label mb-3">Other</div>
-        <ol class="mb-6 text-sm">
-          
-          
-          <li>
-            <a href="/docs/getting-started/" class="block py-3 px-6 rounded-md hover:bg-gray-200">Getting started</a>
-          </li>
-          
         </ol>
         
       </div>
@@ -242,78 +218,24 @@
       <div class="prose">
         <h1>Introduction to Valorem</h1>
         <hr>
-        <h2 id="tests">Tests</h2>
+        <h2 id="valorem-v1-options">Valorem V1 Options</h2>
 
-<p>The main documentation pages of this theme illustrate the use of many of its features, which to some extent tests their implementation. The pages linked below provide further test cases for particular features, and may be useful for regression testing when developing new features.</p>
-
-<p>The default configuration does not include the test pages. To include them, <em>commment-out</em> the following line in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">,</span> <span class="s2">"</span><span class="s">docs/tests/"</span>
-</code></pre></div></div>
-<p>so that it is:</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># , "docs/tests/"</span>
-</code></pre></div></div>
-
-<p>(Apparently Jekyll’s <code class="language-plaintext highlighter-rouge">include</code> does <em>not</em> override <code class="language-plaintext highlighter-rouge">exclude</code>  for the same folder…)</p>
-
-<p>Below are shortcode widgets you can use to include captions underneath images, and to embed YouTube videos (copy-paste the video ID). You’ll want to remove this text before you publish your article.</p>
-
-<figure>
-  <div class="aspect-w-16 aspect-h-9 youtube-container">
-    <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/video ID goes here" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-  </div>
-  
-</figure>
-
-<h2 id="generating-ebooks-and-pdfs">Generating eBooks and PDFs</h2>
-
-<p>GitBook can generates a website, but can also output content as ebook (ePub, Mobi, PDF).</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Generate a PDF file
-$ gitbook pdf ./ ./mybook.pdf
-
-# Generate an ePub file
-$ gitbook epub ./ ./mybook.epub
-
-# Generate a Mobi file
-$ gitbook mobi ./ ./mybook.mobi
-</code></pre></div></div>
-
-<h3 id="installing-ebook-convert">Installing ebook-convert</h3>
-
-<p><code class="language-plaintext highlighter-rouge">ebook-convert</code> is required to generate ebooks (epub, mobi, pdf).</p>
-
-<h5 id="os-x">OS X</h5>
-
-<p>Download the <a href="https://calibre-ebook.com/download">Calibre application</a>. After moving the <code class="language-plaintext highlighter-rouge">calibre.app</code> to your Applications folder create a symbolic link to the ebook-convert tool:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo ln -s ~/Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin
-</code></pre></div></div>
-
-<p>You can replace <code class="language-plaintext highlighter-rouge">/usr/bin</code> with any directory that is in your $PATH.</p>
-
-<h3 id="cover">Cover</h3>
-
-<p>Covers are used for all the ebook formats. You can either provide one yourself, or generate one using the <a href="https://plugins.gitbook.com/plugin/autocover">autocover plugin</a>.</p>
-
-<p>To provide a cover, place a <strong><code class="language-plaintext highlighter-rouge">cover.jpg</code></strong> file at the root directory of your book. Adding a <strong><code class="language-plaintext highlighter-rouge">cover_small.jpg</code></strong> will specify a smaller version of the cover. The cover should be a <strong>JPEG</strong> file.</p>
-
-<p>A good cover should respect the following guidelines:</p>
-
-<ul>
-  <li>Size of 1800x2360 pixels for <code class="language-plaintext highlighter-rouge">cover.jpg</code>, 200x262 for <code class="language-plaintext highlighter-rouge">cover_small.jpg</code></li>
-  <li>No border</li>
-  <li>Clearly visible book title</li>
-  <li>Any important text should be visible in the small version</li>
-</ul>
-
+<p>Valorem Options V1 is a DeFi money lego enabling writing covered call and covered put, 
+physically settled, american or european options. All written options are fully collateralized 
+against an ERC-20 underlying asset and exercised with an ERC-20 exercise asset using a VRF 
+random number per unique option type for fair settlement. Options contracts are issued as 
+fungible ERC-1155 tokens, with each token representing a contract. Option writers are 
+additionally issued an ERC-1155 NFT representing a lot of contracts written for claiming 
+collateral and exercise assignment. This design eliminates the need for market price oracles, 
+and allows for permission-less writing, and gas efficient transfer, of a broad swath of 
+traditional options.</p>
 
       </div>
     </article>
     <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
       <div class="fixed">
         <div class="label mb-6">On this page</div>
-        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#tests" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Tests</a></li><li class=""><a href="#generating-ebooks-and-pdfs" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Generating eBooks and PDFs</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#installing-ebook-convert" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Installing ebook-convert</a></li><li class=""><a href="#cover" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Cover</a></li></ol></li></ol>
+        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#valorem-v1-options" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Valorem V1 Options</a></li></ol>
       </div>
     </nav>
   </div>
