@@ -51,7 +51,7 @@ footer_groups:
 
 navigation_links_docs:
   - url: /docs/introduction/
-    name: Introduction to Valorem
+    name: What is Valorem?
     group:
       - documentation
 
