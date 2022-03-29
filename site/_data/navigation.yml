@@ -6,7 +6,7 @@ navigation_links:
       - footer
     group:
       - main
-  - url: /news/
+  - url: https://twitter.com/valoremxyz
     name: News
     visible:
       - header
