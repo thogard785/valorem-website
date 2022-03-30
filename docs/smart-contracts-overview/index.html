@@ -159,7 +159,7 @@
       <div class="label">Documentation</div>
       
       
-      <a href="/docs/introduction/" class="focus:text-purple-500 focus:outline-none">What is Valorem?</a>
+      <a href="/docs/what-is-valorem/" class="focus:text-purple-500 focus:outline-none">What is Valorem?</a>
       
       <a href="/docs/smart-contracts-overview/" class="focus:text-purple-500 focus:outline-none">Smart Contracts Overview</a>
       
@@ -209,7 +209,7 @@
           
           
           <li>
-            <a href="/docs/introduction/" class="block py-3 px-6 rounded-md hover:bg-gray-200">What is Valorem?</a>
+            <a href="/docs/what-is-valorem/" class="block py-3 px-6 rounded-md hover:bg-gray-200">What is Valorem?</a>
           </li>
           
           <li>
@@ -240,16 +240,45 @@ codebase, additional documentation is provided here.</p>
 
 <h3 id="ioptionsettlementengine">IOptionSettlementEngine</h3>
 
-<p><code class="language-plaintext highlighter-rouge">IOptionSettlementEngine</code> is an ERC-1155 multi-token interface extended to provide 
-an interface to the Valorem protocol options settlement system.</p>
+<p><code class="language-plaintext highlighter-rouge">IOptionSettlementEngine</code> is an 
+<a href="https://eips.ethereum.org/EIPS/eip-1155">ERC-1155 multi-token</a> 
+interface extended to provide an interface to the Valorem protocol options 
+settlement system.</p>
+
+<h4 id="enums">Enums</h4>
+
+<h5 id="type">Type</h5>
+
+<p>The <code class="language-plaintext highlighter-rouge">Type</code> enum contains information about the type of a given token in the 
+settlement engine.</p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">Type</span> <span class="p">{</span>
+        <span class="n">None</span><span class="p">,</span>
+        <span class="n">Option</span><span class="p">,</span>
+        <span class="n">Claim</span>
+    <span class="p">}</span>
+</code></pre></div></div>
 
 <h4 id="structs">Structs</h4>
 
+<h5 id="claim">Claim</h5>
+
+<p>The <code class="language-plaintext highlighter-rouge">Claim</code> struct contains information about a claim, generated when a writer calls
+<code class="language-plaintext highlighter-rouge">write</code>. Every claim is linked to an <code class="language-plaintext highlighter-rouge">option</code> token.</p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Claim</span> <span class="p">{</span>
+        <span class="kt">uint256</span> <span class="n">option</span><span class="p">;</span>
+        <span class="kt">uint112</span> <span class="n">amountWritten</span><span class="p">;</span>
+        <span class="kt">uint112</span> <span class="n">amountExercised</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">claimed</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
 <h5 id="option">Option</h5>
 
-<p>The option struct contains all data about an option chain/token and is keyed on the 
+<p>The <code class="language-plaintext highlighter-rouge">Option</code> struct contains all data about an option chain/token and is keyed on the 
 unique hash <code class="language-plaintext highlighter-rouge">keccak256(abi.encode(Option memory))</code> where <code class="language-plaintext highlighter-rouge">settlementSeed</code> is set to 
-0 at the time of hashing.</p>
+<code class="language-plaintext highlighter-rouge">0</code> at the time of hashing.</p>
 
 <div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">struct</span> <span class="n">Option</span> <span class="p">{</span>
         <span class="kt">address</span> <span class="n">underlyingAsset</span><span class="p">;</span>
@@ -261,6 +290,20 @@ unique hash <code class="language-plaintext highlighter-rouge">keccak256(abi.enc
         <span class="kt">uint96</span> <span class="n">exerciseAmount</span><span class="p">;</span>
     <span class="p">}</span>
 </code></pre></div></div>
+
+<h5 id="underlying">Underlying</h5>
+
+<p>The <code class="language-plaintext highlighter-rouge">Underlying</code> struct contains information about the underlying assets for 1 
+wei of a given token ID in the settlement engine.</p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Underlying</span> <span class="p">{</span>
+        <span class="kt">address</span> <span class="n">underlyingAsset</span><span class="p">;</span>
+        <span class="kt">int256</span> <span class="n">underlyingPosition</span><span class="p">;</span>
+        <span class="kt">address</span> <span class="n">exerciseAsset</span><span class="p">;</span>
+        <span class="kt">int256</span> <span class="n">exercisePosition</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
 
       </div>
     </article>
