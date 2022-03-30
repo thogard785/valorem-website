@@ -54,6 +54,10 @@ navigation_links_docs:
     name: What is Valorem?
     group:
       - documentation
+  - url: /docs/smart-contracts-overview/
+      name: Smart Contracts Overview
+      group:
+        - documentation
 
 docs_groups:
   - documentation
