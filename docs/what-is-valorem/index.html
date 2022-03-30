@@ -269,6 +269,13 @@ any strike price, any expiry timestamp at least 24 hours in the future, and
 any exercise timestamp at least 24 hours before expiry. This flexibility enables 
 the settlement layer to be used in a large range of applications.</p>
 
+<h4 id="oracle-lite">Oracle-lite</h4>
+
+<p>Part of what enables the flexibility for the protocol, is the absence of a need 
+for price oracles. Option exercise happens at the discretion of the option 
+holder. The only oracles in the protocol design are VRF for provably random and 
+fair exercise assignment.</p>
+
       </div>
     </article>
     <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
