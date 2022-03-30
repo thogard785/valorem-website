@@ -231,7 +231,9 @@ engine upon which more complex systems can be built.</p>
 <p><a href="https://github.com/Alcibiades-Capital/valorem-options-contracts">Core Contracts Source Code</a></p>
 
 <p>The Core is designed to be gas efficient, minimal, and provide a secure settlement 
-system.</p>
+system. The Core consists, primarily, of a settlement engine which allows users 
+to write options, exercise options, redeem claims for assets, and settles assignments
+of exercises to claims written.</p>
 
 <h2 id="core-interface">Core Interface</h2>
 
@@ -257,6 +259,39 @@ settlement engine.</p>
         <span class="n">Option</span><span class="p">,</span>
         <span class="n">Claim</span>
     <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="functions">Functions</h4>
+
+<h5 id="feebps">feeBps</h5>
+
+<p>Returns the protocol fee in basis points charged to writers in the underlying 
+asset and exercisers in the exercise asset.</p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">feeBps</span><span class="p">()</span> <span class="k">external</span> <span class="k">view</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">uint8</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="errors">Errors</h4>
+
+<h5 id="tokennotfound">TokenNotFound</h5>
+
+<p>The <code class="language-plaintext highlighter-rouge">TokenNotFound()</code> error occurs when a token is not found in the engine.</p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">error</span> <span class="n">TokenNotFound</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h4 id="events">Events</h4>
+
+<h5 id="feeswept">FeeSwept</h5>
+
+<p>The <code class="language-plaintext highlighter-rouge">FeeSwept</code> event is emitted when accrued protocol fees for a given token are 
+swept to the <code class="language-plaintext highlighter-rouge">feeTo</code> address.</p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">event</span> <span class="n">FeeSwept</span><span class="p">(</span>
+        <span class="kt">address</span> <span class="k">indexed</span> <span class="n">token</span><span class="p">,</span>
+        <span class="kt">address</span> <span class="k">indexed</span> <span class="n">feeTo</span><span class="p">,</span>
+        <span class="kt">uint256</span> <span class="n">amount</span>
+    <span class="p">);</span>
 </code></pre></div></div>
 
 <h4 id="structs">Structs</h4>
