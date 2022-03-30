@@ -43,6 +43,9 @@ page_blocks:
       - heading: Twitter
         subheading: Keep up to date
         url: https://twitter.com/valoremxyz
+      - heading: Github
+        subheading: Build with us
+        url: https://github.com/Alcibiades-Capital/valorem-options-contracts
   - _id: cta
     heading: App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.
     buttons:
