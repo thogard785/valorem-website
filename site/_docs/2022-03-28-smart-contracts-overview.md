@@ -11,7 +11,9 @@ engine upon which more complex systems can be built.
 [Core Contracts Source Code](https://github.com/Alcibiades-Capital/valorem-options-contracts)
 
 The Core is designed to be gas efficient, minimal, and provide a secure settlement 
-system.
+system. The Core consists, primarily, of a settlement engine which allows users 
+to write options, exercise options, redeem claims for assets, and settles assignments
+of exercises to claims written.
 
 ## Core Interface
 
@@ -38,6 +40,42 @@ enum Type {
         Option,
         Claim
     }
+```
+
+#### Functions
+
+##### feeBps
+
+Returns the protocol fee in basis points charged to writers in the underlying 
+asset and exercisers in the exercise asset.
+
+```solidity
+function feeBps() external view returns (uint8);
+```
+
+#### Errors
+
+##### TokenNotFound
+
+The `TokenNotFound()` error occurs when a token is not found in the engine.
+
+```solidity
+error TokenNotFound();
+```
+
+#### Events
+
+##### FeeSwept
+
+The `FeeSwept` event is emitted when accrued protocol fees for a given token are 
+swept to the `feeTo` address.
+
+```solidity
+event FeeSwept(
+        address indexed token,
+        address indexed feeTo,
+        uint256 amount
+    );
 ```
 
 #### Structs
