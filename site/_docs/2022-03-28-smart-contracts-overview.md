@@ -42,6 +42,100 @@ enum Type {
     }
 ```
 
+#### Errors
+
+##### TokenNotFound
+
+The `TokenNotFound()` error occurs when a token is not found in the engine.
+
+```solidity
+error TokenNotFound();
+```
+
+#### Events
+
+##### FeeSwept
+
+The `FeeSwept` event is emitted when accrued protocol fees for a given token are
+swept to the `feeTo` address.
+
+```solidity
+event FeeSwept(
+        address indexed token,
+        address indexed feeTo,
+        uint256 amount
+    );
+```
+
+##### NewChain
+
+The `NewChain` event is emitted when a new unique options chain is created.
+
+```solidity
+event NewChain(
+        uint256 indexed optionId,
+        address indexed exerciseAsset,
+        address indexed underlyingAsset,
+        uint96 exerciseAmount,
+        uint96 underlyingAmount,
+        uint40 exerciseTimestamp,
+        uint40 expiryTimestamp
+    );
+```
+
+##### OptionsExercised
+
+The `OptionsExercised` event is emitted on successful `exercise` of options.
+
+```solidity
+event OptionsExercised(
+        uint256 indexed optionId,
+        address indexed exercisee,
+        uint112 amount
+    );
+```
+
+#### OptionsWritten
+
+The `OptionsWritten` event is emitted when `write` is called to write new options.
+
+```solidity
+event OptionsWritten(
+        uint256 indexed optionId,
+        address indexed writer,
+        uint256 claimId,
+        uint112 amount
+    );
+```
+
+##### FeeAccrued
+
+The `FeeAccrued` event is emitted on `write` or `exercise`.
+
+```solidity
+event FeeAccrued(
+        address indexed asset,
+        address indexed payor,
+        uint256 amount
+    );
+```
+
+##### ClaimRedeemed
+
+The `ClaimRedeem` event is emitted when `redeem` is called on a `Claim`.
+
+```solidity
+event ClaimRedeemed(
+        uint256 indexed claimId,
+        uint256 indexed optionId,
+        address indexed redeemer,
+        address exerciseAsset,
+        address underlyingAsset,
+        uint96 exerciseAmount,
+        uint96 underlyingAmount
+    );
+```
+
 #### Functions
 
 ##### feeBalance
@@ -175,31 +269,6 @@ function underlying(uint256 tokenId)
         external
         view
         returns (Underlying memory underlyingPositions);
-```
-
-#### Errors
-
-##### TokenNotFound
-
-The `TokenNotFound()` error occurs when a token is not found in the engine.
-
-```solidity
-error TokenNotFound();
-```
-
-#### Events
-
-##### FeeSwept
-
-The `FeeSwept` event is emitted when accrued protocol fees for a given token are 
-swept to the `feeTo` address.
-
-```solidity
-event FeeSwept(
-        address indexed token,
-        address indexed feeTo,
-        uint256 amount
-    );
 ```
 
 #### Structs
