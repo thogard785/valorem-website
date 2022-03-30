@@ -43,22 +43,22 @@
     <link rel="alternate" type="application/atom+xml" title="Valorem Protocol" href="/feed.xml" title="Valorem Protocol">
 
     
-    <title>What is Valorem? | Valorem Protocol</title>
-<meta property="og:title" content="What is Valorem?
+    <title>Smart Contracts Overview | Valorem Protocol</title>
+<meta property="og:title" content="Smart Contracts Overview
 " />
 <meta name="author" content="Alcibiades" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
+<meta name="description" content="An overview of the Valorem protocol smart contracts.
 " />
-<meta property="og:description" content="Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
+<meta property="og:description" content="An overview of the Valorem protocol smart contracts.
 " />
-<link rel="canonical" href="https://valorem.xyz/docs/what-is-valorem/" />
-<meta property="og:url" content="https://valorem.xyz/docs/what-is-valorem/" />
+<link rel="canonical" href="https://valorem.xyz/docs/smart-contracts-overview/" />
+<meta property="og:url" content="https://valorem.xyz/docs/smart-contracts-overview/" />
 <meta property="og:site_name" content="Valorem Protocol" />
 <meta property="og:image" content="" /><meta property="og:type" content="website" /><meta property="article:published_time" content="2022-03-27T19:00:00-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="" />
-<meta property="twitter:title" content="What is Valorem?
+<meta property="twitter:title" content="Smart Contracts Overview
 " />
 <meta name="google-site-verification" content="" />
 
@@ -66,8 +66,8 @@
     {
         "@context":"https://schema.org",
         "@type":"WebPage",
-        "name":"What is Valorem?",
-        "description":"Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
+        "name":"Smart Contracts Overview",
+        "description":"An overview of the Valorem protocol smart contracts.
 ",
         "publisher":{
             "@type":"Organization",
@@ -213,7 +213,7 @@
           </li>
           
           <li>
-            <a href="/docs/smart-contracts-overview/" class="block py-3 px-6 rounded-md hover:bg-gray-200">Smart Contracts Overview</a>
+            <a href="/docs/smart-contracts-overview/" class="block py-3 px-6 rounded-md text-gray-900 bg-gray-cool">Smart Contracts Overview</a>
           </li>
           
         </ol>
@@ -222,59 +222,52 @@
     </nav>
     <article class="lg:flex-grow">
       <div class="prose">
-        <h1>What is Valorem?</h1>
+        <h1>Smart Contracts Overview</h1>
         <hr>
-        <h2 id="introduction">Introduction</h2>
+        <p>Valorem V1 is a binary smart contract system comprised of many libraries, 
+which together make the Core. The Core contracts provide the option settlement 
+engine upon which more complex systems can be built.</p>
 
-<p>The Valorem protocol is a peer-to-peer system designed for settling options 
-on ERC-20 tokens. The protocol is implemented as a set of persistent, 
-non-upgradable smart contracts; designed to prioritize censorship resistance, 
-security, self-custody, and to function without any intermediaries who may 
-restrict access.</p>
+<p><a href="https://github.com/Alcibiades-Capital/valorem-options-contracts">Core Contracts Source Code</a></p>
 
-<p>The Valorem protocol enables writing covered call and 
-covered put, physically settled, options. All written options are fully 
-collateralized against an ERC-20 underlying asset and exercised with an ERC-20 
-exercise asset using a VRF random number per unique option type for fair 
-settlement.</p>
+<p>The Core is designed to be gas efficient, minimal, and provide a secure settlement 
+system.</p>
 
-<p>Options contracts are issued as fungible ERC-1155 tokens, herein referred to as 
-vTokens, with each token representing a contract. Option writers are 
-additionally issued an ERC-1155 NFT representing a lot of contracts written 
-for claiming collateral and exercise assignment. This design eliminates the 
-need for market price oracles, and allows for permission-less writing, and 
-gas efficient transfer, of a broad swath of traditional and exotic options.</p>
+<h2 id="core-interface">Core Interface</h2>
 
-<h2 id="design-choices">Design Choices</h2>
+<p>The core exposes an interface for users of the protocol, which is documented in the 
+codebase, additional documentation is provided here.</p>
 
-<h3 id="permissionless">Permissionless</h3>
+<h3 id="ioptionsettlementengine">IOptionSettlementEngine</h3>
 
-<p>The Valorem protocol is designed to be permissionless. This permissionless 
-design means that the protocol is open to public use, with no ability to restrict 
-who can or cannot use it. Anyone can create new options chains, write options, 
-exercise the options they hold, transfer those options, and transfer claims 
-generated during writing.</p>
+<p><code class="language-plaintext highlighter-rouge">IOptionSettlementEngine</code> is an ERC-1155 multi-token interface extended to provide 
+an interface to the Valorem protocol options settlement system.</p>
 
-<h3 id="fully-collateralized">Fully Collateralized</h3>
+<h4 id="structs">Structs</h4>
 
-<p>The protocol being fully collateralized means that options can be exercised at 
-any time prior to expiry and after the exercise timestamp, without the risk of 
-default. This design choice was made due to the nature of decentralization and 
-the permissionless nature of the protocol.</p>
+<h5 id="option">Option</h5>
 
-<h3 id="flexible">Flexible</h3>
+<p>The option struct contains all data about an option chain/token and is keyed on the 
+unique hash <code class="language-plaintext highlighter-rouge">keccak256(abi.encode(Option memory))</code> where <code class="language-plaintext highlighter-rouge">settlementSeed</code> is set to 
+0 at the time of hashing.</p>
 
-<p>The Valorem protocol allows writers to write options on any ERC-20 pair, with 
-any strike price, any expiry timestamp at least 24 hours in the future, and 
-any exercise timestamp at least 24 hours before expiry. This flexibility enables 
-the settlement layer to be used in a large range of applications.</p>
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">struct</span> <span class="n">Option</span> <span class="p">{</span>
+        <span class="kt">address</span> <span class="n">underlyingAsset</span><span class="p">;</span>
+        <span class="kt">uint40</span> <span class="n">exerciseTimestamp</span><span class="p">;</span>
+        <span class="kt">uint40</span> <span class="n">expiryTimestamp</span><span class="p">;</span>
+        <span class="kt">address</span> <span class="n">exerciseAsset</span><span class="p">;</span>
+        <span class="kt">uint96</span> <span class="n">underlyingAmount</span><span class="p">;</span>
+        <span class="kt">uint160</span> <span class="n">settlementSeed</span><span class="p">;</span>
+        <span class="kt">uint96</span> <span class="n">exerciseAmount</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
 
       </div>
     </article>
     <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
       <div class="fixed">
         <div class="label mb-6">On this page</div>
-        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a></li><li class=""><a href="#design-choices" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Design Choices</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#permissionless" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Permissionless</a></li><li class=""><a href="#fully-collateralized" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Fully Collateralized</a></li><li class=""><a href="#flexible" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Flexible</a></li></ol></li></ol>
+        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#core-interface" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Core Interface</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#ioptionsettlementengine" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">IOptionSettlementEngine</a></li></ol></li></ol>
       </div>
     </nav>
   </div>
