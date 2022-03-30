@@ -44,6 +44,15 @@ enum Type {
 
 #### Functions
 
+##### feeBalance
+
+The `feeBalance` function returns the balance of protocol fees for a given `token`
+which have not been swept yet.
+
+```solidity
+function feeBalance(address token) external view returns (uint256);
+```
+
 ##### feeBps
 
 Returns the protocol fee in basis points charged to writers in the underlying 
@@ -51,6 +60,121 @@ asset and exercisers in the exercise asset.
 
 ```solidity
 function feeBps() external view returns (uint8);
+```
+
+##### feeTo
+
+The `feeTo` function returns the address to which protocol fees are swept.
+
+```solidity
+function feeTo() external view returns (address);
+```
+
+##### tokenType
+
+Returns the token `Type` enum for a given `tokenId`.
+
+```function tokenType(uint256 tokenId) external view returns (Type);```
+
+
+##### option
+
+Returns `Option` struct details about a given `tokenId` if that token is a vToken.
+
+```solidity
+function option(uint256 tokenId)
+        external
+        view
+        returns (Option memory optionInfo);
+```
+
+##### claim
+
+Returns `Claim` struct details about a given `tokenId` if that token is a claim NFT.
+
+```solidity
+function claim(uint256 tokenId)
+        external
+        view
+        returns (Claim memory claimInfo);
+```
+
+##### setFeeTo
+
+Callable only by the present `feeTo` address, changes the `feeTo` address.
+
+```solidity
+function setFeeTo(address newFeeTo) external;
+```
+
+##### hashToOptionToken
+
+Returns the `optionId` for the hash `keccak256(abi.encode(Option memory))` where `settlementSeed` is set to
+`0` at the time of hashing if it exists.
+
+```solidity
+function hashToOptionToken(bytes32 hash)
+        external
+        view
+        returns (uint256 optionId);
+```
+
+##### sweepFees
+
+Sweeps the fees if the balance for a token is greater than 1 wei, for each token in
+`tokens`.
+
+```solidity
+function sweepFees(address[] memory tokens) external;
+```
+
+##### newChain
+
+Creates a new options chain if one doesn't already exist for the hash `keccak256(abi.encode(Option memory))` where `settlementSeed` is set to
+`0`.
+
+```solidity
+ function newChain(Option memory optionInfo)
+        external
+        returns (uint256 optionId);
+```
+
+##### write
+
+Writes `amount` of `optionId` `Option` and sends the caller vTokens and a claim NFT.
+
+```solidity
+function write(uint256 optionId, uint112 amount)
+        external
+        returns (uint256 claimId);
+```
+
+##### exercise
+
+Exercises `amount` of `optionId`, transferring in the exercise asset, and 
+transferring out the underlying asset if all requirements are met.
+
+```solidity
+function exercise(uint256 optionId, uint112 amount) external;
+```
+
+##### redeem
+
+Redeems `claimId` for the underlying asset(s) if `msg.sender` is the caller and 
+the options chain for the claim has reached expiry. Burns the claim NFT on success.
+
+```function redeem(uint256 claimId) external;```
+
+##### underlying
+
+Returns the `Underlying` struct about assets for 1 wei of a given `tokenId` if 
+that token exists.
+
+```solidity
+function underlying(uint256 tokenId)
+        external
+        view
+        returns (Underlying memory underlyingPositions);
 ```
 
 #### Errors
