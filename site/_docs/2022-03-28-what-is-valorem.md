@@ -1,7 +1,7 @@
 ---
 date: 2022-03-28 00:00:00 +01
 title: What is Valorem? 
-description: Permissionless physically settled options, on any ERC20 token.
+description: Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
 ---
 
 ## Introduction
@@ -25,7 +25,7 @@ for claiming collateral and exercise assignment. This design eliminates the
 need for market price oracles, and allows for permission-less writing, and 
 gas efficient transfer, of a broad swath of traditional and exotic options.
 
-## How does the Valorem protocol compare to existing options settlement systems? 
+## Design Choices
 
 ### Permissionless
 

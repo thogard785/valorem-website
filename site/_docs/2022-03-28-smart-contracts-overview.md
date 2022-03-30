@@ -1,0 +1,44 @@
+---
+date: 2022-03-28 00:00:00 +01
+title: Smart Contracts Overview
+description: An overview of the Valorem protocol smart contracts.
+---
+
+Valorem V1 is a binary smart contract system comprised of many libraries, 
+which together make the Core. The Core contracts provide the option settlement 
+engine upon which more complex systems can be built.
+
+[Core Contracts Source Code](https://github.com/Alcibiades-Capital/valorem-options-contracts)
+
+The Core is designed to be gas efficient, minimal, and provide a secure settlement 
+system.
+
+## Core Interface
+
+The core exposes an interface for users of the protocol, which is documented in the 
+codebase, additional documentation is provided here.
+
+### IOptionSettlementEngine
+
+`IOptionSettlementEngine` is an ERC-1155 multi-token interface extended to provide 
+an interface to the Valorem protocol options settlement system.
+
+#### Structs
+
+##### Option
+
+The option struct contains all data about an option chain/token and is keyed on the 
+unique hash `keccak256(abi.encode(Option memory))` where `settlementSeed` is set to 
+0 at the time of hashing.
+
+```solidity
+    struct Option {
+        address underlyingAsset;
+        uint40 exerciseTimestamp;
+        uint40 expiryTimestamp;
+        address exerciseAsset;
+        uint96 underlyingAmount;
+        uint160 settlementSeed;
+        uint96 exerciseAmount;
+    }
+```
