@@ -48,3 +48,10 @@ The Valorem protocol allows writers to write options on any ERC-20 pair, with
 any strike price, any expiry timestamp at least 24 hours in the future, and 
 any exercise timestamp at least 24 hours before expiry. This flexibility enables 
 the settlement layer to be used in a large range of applications.
+
+#### Oracle-lite
+
+Part of what enables the flexibility for the protocol, is the absence of a need 
+for price oracles. Option exercise happens at the discretion of the option 
+holder. The only oracles in the protocol design are VRF for provably random and 
+fair exercise assignment.
