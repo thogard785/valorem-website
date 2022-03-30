@@ -20,16 +20,47 @@ codebase, additional documentation is provided here.
 
 ### IOptionSettlementEngine
 
-`IOptionSettlementEngine` is an ERC-1155 multi-token interface extended to provide 
-an interface to the Valorem protocol options settlement system.
+`IOptionSettlementEngine` is an 
+[ERC-1155 multi-token](https://eips.ethereum.org/EIPS/eip-1155) 
+interface extended to provide an interface to the Valorem protocol options 
+settlement system.
+
+#### Enums
+
+##### Type
+
+The `Type` enum contains information about the type of a given token in the 
+settlement engine.
+
+```solidity
+enum Type {
+        None,
+        Option,
+        Claim
+    }
+```
 
 #### Structs
 
+##### Claim
+
+The `Claim` struct contains information about a claim, generated when a writer calls
+`write`. Every claim is linked to an `option` token.
+
+```solidity
+struct Claim {
+        uint256 option;
+        uint112 amountWritten;
+        uint112 amountExercised;
+        bool claimed;
+    }
+```
+
 ##### Option
 
-The option struct contains all data about an option chain/token and is keyed on the 
+The `Option` struct contains all data about an option chain/token and is keyed on the 
 unique hash `keccak256(abi.encode(Option memory))` where `settlementSeed` is set to 
-0 at the time of hashing.
+`0` at the time of hashing.
 
 ```solidity
     struct Option {
@@ -42,3 +73,21 @@ unique hash `keccak256(abi.encode(Option memory))` where `settlementSeed` is set
         uint96 exerciseAmount;
     }
 ```
+
+##### Underlying
+
+The `Underlying` struct contains information about the underlying assets for 1 
+wei of a given token ID in the settlement engine.
+
+```solidity
+struct Underlying {
+        address underlyingAsset;
+        int256 underlyingPosition;
+        address exerciseAsset;
+        int256 exercisePosition;
+    }
+```
+
+
+
+

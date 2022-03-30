@@ -50,7 +50,7 @@ footer_groups:
   - social
 
 navigation_links_docs:
-  - url: /docs/introduction/
+  - url: /docs/what-is-valorem/
     name: What is Valorem?
     group:
       - documentation
