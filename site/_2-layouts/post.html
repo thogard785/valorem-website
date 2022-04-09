@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% include partials/shortcodes.html %}
+
+<section class="s-hero bg-gradient-default from-purple-500 to-white">
+  <div class="max-w-screen-lg mx-auto space-y-16 text-center">
+    <div class="inline-block label text-white py-2 px-3 rounded-md bg-purple-500 bg-opacity-25">{{ page.date | date: "%b %d, %Y" }}</div>
+    <h1 class="text-gray-900">{{ page.title | smartify }}</h1>
+    {% if page.description %}
+    <div class="text-xl lg:text-2xl">{{ page.description | markdownify }}</div>
+    {% endif %}
+    <div>
+      {% for item in item.buttons limit:2 %}
+      <a href="{{ item.url }}" class="btn btn-purple-500 btn--large even:btn--outlined">{{ item.text }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="s-md">
+  <article class="max-w-screen-xl mx-auto prose text-base sm:text-lg">
+    {{ content }}
+  </article>
+</section>
+
+{% include sections/cta.html %}

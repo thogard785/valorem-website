@@ -12,6 +12,7 @@ module.exports = {
       neutral: '1.0',
       snug: '1.1',
       normal: '1.6',
+      loose: '1.8'
     },
     listStyleType: {
       none: 'none',
@@ -56,7 +57,9 @@ module.exports = {
     },
     extend: {
       letterSpacing: {
-        tight: '-.010em'
+        tight: '-.010em',
+        wide: '.010em',
+        wider: '.075em'
       },
       spacing: {
         '18': '4.5rem'
