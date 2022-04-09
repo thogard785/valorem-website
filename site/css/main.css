@@ -308,7 +308,10 @@ html {
     }
   }
   .highlight {
-    @apply overflow-scroll bg-gray-200 cd-xs font-mono tracking-tight leading-normal text-base;
+    @apply bg-gray-200 cd-xs font-mono tracking-tight leading-normal text-base;
+  }
+  pre.highlight {
+    @apply overflow-auto;
   }
   .highlight table {
     @apply -m-4;
