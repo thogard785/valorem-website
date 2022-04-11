@@ -43,22 +43,22 @@
     <link rel="alternate" type="application/atom+xml" title="Valorem Protocol" href="/feed.xml" title="Valorem Protocol">
 
     
-    <title>What is Valorem? | Valorem Protocol</title>
-<meta property="og:title" content="What is Valorem?
+    <title>Building a New Options Protocol | Valorem Protocol</title>
+<meta property="og:title" content="Building a New Options Protocol
 " />
 <meta name="author" content="Alcibiades" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
+<meta name="description" content="A bit more about what we are building at Valorem and why we are building it.
 " />
-<meta property="og:description" content="Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
+<meta property="og:description" content="A bit more about what we are building at Valorem and why we are building it.
 " />
-<link rel="canonical" href="https://valorem.xyz/blog/what-is-valorem/" />
-<meta property="og:url" content="https://valorem.xyz/blog/what-is-valorem/" />
+<link rel="canonical" href="https://valorem.xyz/blog/building-a-new-options-protocol/" />
+<meta property="og:url" content="https://valorem.xyz/blog/building-a-new-options-protocol/" />
 <meta property="og:site_name" content="Valorem Protocol" />
-<meta property="og:image" content="https://valorem.xyz/assets/images/posts/abstract-1.jpg" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-03-27T19:00:00-04:00" />
+<meta property="og:image" content="https://valorem.xyz/assets/images/posts/abstract-1.jpg" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-04-10T19:00:00-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://valorem.xyz/assets/images/posts/abstract-1.jpg" />
-<meta property="twitter:title" content="What is Valorem?
+<meta property="twitter:title" content="Building a New Options Protocol
 " />
 <meta name="google-site-verification" content="" />
 
@@ -66,7 +66,7 @@
     {
         "@context":"https://schema.org",
         "@type":"BlogPosting",
-        "headline":"What is Valorem?
+        "headline":"Building a New Options Protocol
 ",
         "image":"https://valorem.xyz/assets/images/posts/abstract-1.jpg",
         "author":{
@@ -74,12 +74,12 @@
             "name":"Alcibiades",
             "url":"https://valorem.xyz/about"
         },
-        "datePublished":"2022-03-27T19:00:00-04:00",
-        "dateCreated":"2022-03-27T19:00:00-04:00",
-        "dateModified":"2022-04-11T12:16:29-04:00",
-        "description":"Introduction to the Valorem protocol, a peer-to-peer system for option settlement.
+        "datePublished":"2022-04-10T19:00:00-04:00",
+        "dateCreated":"2022-04-10T19:00:00-04:00",
+        "dateModified":"2022-04-11T12:29:45-04:00",
+        "description":"A bit more about what we are building at Valorem and why we are building it.
 ",
-        "url":"https://valorem.xyz/blog/what-is-valorem/",
+        "url":"https://valorem.xyz/blog/building-a-new-options-protocol/",
         "publisher":{
             "@type":"Organization",
             "logo":{
@@ -131,7 +131,7 @@
           class="p-2 rounded bg-white hover:bg-gray-200">Docs</a>
         
         
-        <a href="https://discord.gg/xwmCSbWK"
+        <a href="https://discord.gg/5jZdPuY9kR"
           class="btn btn-purple-500 text-base px-5 py-2 rounded-xl">Join Discord</a>
         
       </div>
@@ -176,7 +176,7 @@
       <a href="/docs/" class="focus:text-purple-500 focus:outline-none">Docs</a>
       
       
-      <a href="https://discord.gg/xwmCSbWK"
+      <a href="https://discord.gg/5jZdPuY9kR"
         class="btn btn-purple-500 text-base px-5 py-2 rounded-xl mx-auto">Join Discord</a>
       
     </nav>
@@ -210,10 +210,10 @@
 
 <section class="s-hero bg-gradient-default from-purple-500 to-white">
   <div class="max-w-screen-lg mx-auto space-y-16 text-center">
-    <div class="inline-block label text-white py-2 px-3 rounded-md bg-purple-500 bg-opacity-25">Mar 27, 2022</div>
-    <h1 class="text-gray-900">What is Valorem?</h1>
+    <div class="inline-block label text-white py-2 px-3 rounded-md bg-purple-500 bg-opacity-25">Apr 10, 2022</div>
+    <h1 class="text-gray-900">Building a New Options Protocol</h1>
     
-    <div class="text-xl lg:text-2xl"><p>Introduction to the Valorem protocol, a peer-to-peer system for option settlement.</p>
+    <div class="text-xl lg:text-2xl"><p>A bit more about what we are building at Valorem and why we are building it.</p>
 </div>
     
     <div>
@@ -224,57 +224,17 @@
 
 <section class="s-md">
   <article class="max-w-screen-xl mx-auto prose text-base sm:text-lg">
-    <h2 id="introduction">Introduction</h2>
+    <p>We started building a new option protocol last month. Valorem will be launching 
+on the Harmony testnet later this week, and will have a UI and mainnet launch 
+targeting May 1. That’s the beginning, but after that there is a lot more to 
+be built. We are excited to start onboarding some Alpha testers via our 
+<a href="https://discord.gg/5jZdPuY9kR">Discord</a>. Please join and let us know if you 
+want to be an early tester.</p>
 
-<p>The Valorem protocol is a peer-to-peer system designed for settling options
-on ERC-20 tokens. The protocol is implemented as a set of persistent,
-non-upgradable smart contracts; designed to prioritize censorship resistance,
-security, self-custody, and to function without any intermediaries who may
-restrict access.</p>
-
-<p>The Valorem protocol enables writing covered call and
-covered put, physically settled, options. All written options are fully
-collateralized against an ERC-20 underlying asset and exercised with an ERC-20
-exercise asset using a VRF random number per unique option type for fair
-settlement.</p>
-
-<p>Options contracts are issued as fungible ERC-1155 tokens, herein referred to as
-vTokens, with each token representing a contract. Option writers are
-additionally issued an ERC-1155 NFT representing a lot of contracts written
-for claiming collateral and exercise assignment. This design eliminates the
-need for market price oracles, and allows for permission-less writing, and
-gas efficient transfer, of a broad swath of traditional and exotic options.</p>
-
-<h2 id="design-choices">Design Choices</h2>
-
-<h3 id="permissionless">Permissionless</h3>
-
-<p>The Valorem protocol is designed to be permissionless. This permissionless
-design means that the protocol is open to public use, with no ability to restrict
-who can or cannot use it. Anyone can create new options chains, write options,
-exercise the options they hold, transfer those options, and transfer claims
-generated during writing.</p>
-
-<h3 id="fully-collateralized">Fully Collateralized</h3>
-
-<p>The protocol being fully collateralized means that options can be exercised at
-any time prior to expiry and after the exercise timestamp, without the risk of
-default. This design choice was made due to the nature of decentralization and
-the permissionless nature of the protocol.</p>
-
-<h3 id="flexible">Flexible</h3>
-
-<p>The Valorem protocol allows writers to write options on any ERC-20 pair, with
-any strike price, any expiry timestamp at least 24 hours in the future, and
-any exercise timestamp at least 24 hours before expiry. This flexibility enables
-the settlement layer to be used in a large range of applications.</p>
-
-<h4 id="oracle-lite">Oracle-lite</h4>
-
-<p>Part of what enables the flexibility for the protocol, is the absence of a need
-for price oracles. Option exercise happens at the discretion of the option
-holder. The only oracles in the protocol design are VRF for provably random and
-fair exercise assignment.</p>
+<p>We are also starting to design some of the broader tokenomics for an ecosystem 
+of structured products which will overlay the settlement layer. More to follow 
+on that, along with a few examples of how to build structured products atop 
+Valorem.</p>
 
   </article>
 </section>
@@ -285,7 +245,7 @@ fair exercise assignment.</p>
     <h2 class="text-gray-900">App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.</h2>
     <div>
       
-      <a href="https://discord.gg/xwmCSbWK" class="btn btn-purple-500 btn--large even:btn--outlined">Join Discord</a>
+      <a href="https://discord.gg/5jZdPuY9kR" class="btn btn-purple-500 btn--large even:btn--outlined">Join Discord</a>
       
     </div>
   </div>
@@ -330,7 +290,7 @@ fair exercise assignment.</p>
 Twitter
               </a>
               
-              <a href="https://discord.gg/xwmCSbWK" class="inline-flex items-center gap-2 hover:text-purple-500 focus:outline-none focus:text-purple-500">
+              <a href="https://discord.gg/5jZdPuY9kR" class="inline-flex items-center gap-2 hover:text-purple-500 focus:outline-none focus:text-purple-500">
               
   <svg width="24" height="20" viewBox="0 0 24 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4">
 <path d="M20.317 2.19197C18.7873 1.47467 17.147 0.946193 15.4319 0.643512C15.4007 0.63767 15.3695 0.652269 15.3534 0.681467C15.1424 1.06493 14.9087 1.56518 14.7451 1.95837C12.9004 1.67614 11.0652 1.67614 9.25832 1.95837C9.09465 1.55644 8.85248 1.06493 8.64057 0.681467C8.62449 0.653243 8.59328 0.638645 8.56205 0.643512C6.84791 0.945225 5.20756 1.4737 3.67693 2.19197C3.66368 2.19781 3.65233 2.20755 3.64479 2.22019C0.533392 6.97068 -0.31895 11.6044 0.0991801 16.1807C0.101072 16.2031 0.11337 16.2245 0.130398 16.2381C2.18321 17.7787 4.17171 18.7141 6.12328 19.334C6.15451 19.3438 6.18761 19.3321 6.20748 19.3058C6.66913 18.6615 7.08064 17.9822 7.43348 17.2678C7.4543 17.2259 7.43442 17.1763 7.39186 17.1598C6.73913 16.9067 6.1176 16.5982 5.51973 16.2478C5.47244 16.2196 5.46865 16.1505 5.51216 16.1174C5.63797 16.021 5.76382 15.9208 5.88396 15.8196C5.90569 15.8011 5.93598 15.7972 5.96153 15.8089C9.88928 17.6415 14.1415 17.6415 18.023 15.8089C18.0485 15.7962 18.0788 15.8001 18.1015 15.8186C18.2216 15.9198 18.3475 16.021 18.4742 16.1174C18.5177 16.1505 18.5149 16.2196 18.4676 16.2478C17.8697 16.605 17.2482 16.9067 16.5945 17.1588C16.552 17.1753 16.533 17.2259 16.5538 17.2678C16.9143 17.9812 17.3258 18.6605 17.7789 19.3048C17.7978 19.3321 17.8319 19.3438 17.8631 19.334C19.8241 18.7141 21.8126 17.7787 23.8654 16.2381C23.8834 16.2245 23.8948 16.204 23.8967 16.1816C24.3971 10.891 23.0585 6.29525 20.3482 2.22116C20.3416 2.20755 20.3303 2.19781 20.317 2.19197ZM8.02002 13.3942C6.8375 13.3942 5.86313 12.2847 5.86313 10.9221C5.86313 9.55955 6.8186 8.45005 8.02002 8.45005C9.23087 8.45005 10.1958 9.56929 10.1769 10.9221C10.1769 12.2847 9.22141 13.3942 8.02002 13.3942ZM15.9947 13.3942C14.8123 13.3942 13.8379 12.2847 13.8379 10.9221C13.8379 9.55955 14.7933 8.45005 15.9947 8.45005C17.2056 8.45005 18.1705 9.56929 18.1516 10.9221C18.1516 12.2847 17.2056 13.3942 15.9947 13.3942Z"/>

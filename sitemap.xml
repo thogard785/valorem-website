@@ -3,24 +3,9 @@
   
     
     <url>
-      <loc>https://valorem.xyz/blog/what-is-valorem/</loc>
+      <loc>https://valorem.xyz/blog/building-a-new-options-protocol/</loc>
       
-        <lastmod>2022-03-27T19:00:00-04:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.5</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://valorem.xyz/blog/smart-contracts-overview/</loc>
-      
-        <lastmod>2022-03-27T19:00:00-04:00</lastmod>
+        <lastmod>2022-04-10T19:00:00-04:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -38,7 +23,7 @@
     <url>
       <loc>https://valorem.xyz/about/</loc>
       
-        <lastmod>2022-04-11T12:21:04-04:00</lastmod>
+        <lastmod>2022-04-11T12:34:14-04:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -53,7 +38,7 @@
     <url>
       <loc>https://valorem.xyz/docs/</loc>
       
-        <lastmod>2022-04-11T12:21:04-04:00</lastmod>
+        <lastmod>2022-04-11T12:34:14-04:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -68,7 +53,7 @@
     <url>
       <loc>https://valorem.xyz/</loc>
       
-        <lastmod>2022-04-11T12:21:04-04:00</lastmod>
+        <lastmod>2022-04-11T12:34:14-04:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -85,7 +70,7 @@
     <url>
       <loc>https://valorem.xyz/blog/</loc>
       
-        <lastmod>2022-04-11T12:21:04-04:00</lastmod>
+        <lastmod>2022-04-11T12:34:14-04:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
