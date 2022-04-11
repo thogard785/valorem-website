@@ -20,7 +20,7 @@ navigation_links:
       - footer
     group:
       - main
-  - url: https://discord.gg/xwmCSbWK
+  - url: https://discord.gg/5jZdPuY9kR
     name: Join Discord
     visible:
       - header
@@ -32,7 +32,7 @@ navigation_links:
       - footer
     group:
       - social
-  - url: https://discord.gg/xwmCSbWK
+  - url: https://discord.gg/5jZdPuY9kR
     name: Discord
     visible:
       - footer
