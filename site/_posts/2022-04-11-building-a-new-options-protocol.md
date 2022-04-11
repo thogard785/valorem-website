@@ -25,6 +25,12 @@ Valorem.
 
 ### How We Are Going to Get There
 
+This week we have solidity developer from [Raid Guild](https://www.raidguild.org/) 
+doing reviews on the settlement layer before the testnet launch, we have a 
+subgraph developer starting to roll on queries for the protocol to provide 
+user insights and support the UI, and we have a UI developer cranking on a 
+react app for those not wanting to pilot the testnet on a block scanner.
+
 We look forward to the feedback from our users, and in choosing two or three 
 two sided structured product designs to build for writers and option holders 
 to use. One use case we are immediately excited to build, is vesting options 
