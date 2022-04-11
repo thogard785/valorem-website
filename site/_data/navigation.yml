@@ -6,8 +6,8 @@ navigation_links:
       - footer
     group:
       - main
-  - url: https://twitter.com/valoremxyz
-    name: News
+  - url: /blog/
+    name: Blog
     visible:
       - header
       - footer
@@ -20,11 +20,10 @@ navigation_links:
       - footer
     group:
       - main
-  - url: https://valorem.xyz/
-    name: Coming Soon
+  - url: https://discord.gg/xwmCSbWK
+    name: Join Discord
     visible:
       - header
-      - footer
     group:
       - cta
   - url: https://twitter.com/valoremxyz

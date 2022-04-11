@@ -1,0 +1,20 @@
+<section class="s-lg bg-gray-200">
+  <div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+    {% for item in paginator.posts %}
+    <a href="{{ item.url }}" class="bg-white rounded-2xl overflow-hidden shadow-lg micro-float group">
+      {% responsive_image_block %}
+          path: {{ item.image | remove_first: "/" }}
+          alt: "Post thumbnail image"
+          class: "object-cover w-full h-auto max-h-32 mx-auto"
+          sizes: ""
+        {% endresponsive_image_block %}
+      <div class="cd-md space-y-4">
+        <div class="label text-gray-600">{{ item.date | date: "%b %d, %Y" }}</div>
+        <h2 class="h4">{{ item.title | smartify }}</h2>
+        <div class="text-gray-600">{{ item.description | markdownify }}</div>
+      </div>
+    </a>
+    {% endfor %}
+    {% include partials/pagination.html %}
+  </div>
+</section>

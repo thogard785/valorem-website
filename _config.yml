@@ -11,6 +11,9 @@ collections:
   docs:
     permalink: /:collection/:title/
     output: true
+  posts:
+    permalink: /blog/:title/
+    output: true
 
 # Configure collection defaults
 defaults:
@@ -27,6 +30,13 @@ defaults:
       layout: doc
       seo:
         type: TechArticle
+  - scope:
+      path: '_posts'
+      type: 'posts'
+    values:
+      layout: post
+      seo:
+        type: BlogPosting
 
 # Build settings
 destination: _site
@@ -44,6 +54,7 @@ plugins:
   - jekyll-include-cache
   - jekyll-responsive-image
   - jekyll-last-modified-at
+  - jekyll-paginate-v2
 
 # Plugin settings
 responsive_image:
@@ -58,3 +69,14 @@ responsive_image:
   output_path_format: assets/images/%{dirname}/%{filename}-%{width}.%{extension}
   save_to_source: false
   cache: false
+
+pagination:
+  enabled: true
+  sort_reverse: true
+  debug: false
+  per_page: 15
+  permalink: /:num/
+  title: :title (page :num)
+  trail:
+    before: 3
+    after: 3

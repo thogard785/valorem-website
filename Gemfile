@@ -11,6 +11,7 @@ group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem "jekyll-responsive-image"
   gem "jekyll-last-modified-at"
+  gem "jekyll-paginate-v2"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

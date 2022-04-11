@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="font-body antialiased text-base text-gray-800 bg-white">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="font-primary antialiased text-base text-gray-800 bg-white">
 
 {% comment %}Site head{% endcomment %}
 {% include partials/shortcodes.html %}
 {% include partials/1-head.html %}
 
-<body class="{{page.class}} mx-auto">
+<body class="{{page.class}} mx-auto text-lg tracking-wide">
     {% comment %}Google Tag Manager NoScript snippet—will load in production environment. Make sure site.gtm_username
     has been updated!{% endcomment %}
     {% include partials/gtm-body.html %}
