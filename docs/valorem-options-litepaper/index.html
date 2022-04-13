@@ -298,17 +298,30 @@ fair exercise assignment.</p>
 
 <h2 id="use-cases">Use cases</h2>
 
+<p>Where:</p>
+
+<p>$ S_T $ is the price of the underlying asset at expiration; and
+$ X $ is the exercise asset price; and
+$ p_0 $ is the premium paid.</p>
+
 <h3 id="call-options">Call options</h3>
 
-<p>The Valorem protocol can be used to write covered call options with the payoff 
-$ max(0,-S_T) $ for the buyer.</p>
+<p>The Valorem protocol can be used to create covered call options with the payoff 
+$ max(0,S_T-X) $ for the holder, and the payoff  $ -max(0,S_T-X) $ for the 
+writer.</p>
+
+<h3 id="put-options">Put options</h3>
+
+<p>The Valorem protocol can be used to create covered put options with the payoff
+$ max(0,X-S_T) $ for the holder, and the payoff  $ -max(0,X-S_T) $ for the 
+writer.</p>
 
       </div>
     </article>
     <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
       <div class="fixed">
         <div class="label mb-6">On this page</div>
-        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#key-innovations" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Key innovations</a></li></ol></li><li class=""><a href="#use-cases" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Use cases</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#call-options" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Call options</a></li></ol></li></ol>
+        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#key-innovations" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Key innovations</a></li></ol></li><li class=""><a href="#use-cases" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Use cases</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#call-options" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Call options</a></li><li class=""><a href="#put-options" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Put options</a></li></ol></li></ol>
       </div>
     </nav>
   </div>
