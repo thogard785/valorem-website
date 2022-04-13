@@ -249,7 +249,7 @@ of the Uniswap V3 LP NFT, and the nature of perpetual options, as
 opposed to ones with fixed exercise and expiry timestamps. Present on chain 
 protocols are fundamentally limited by these design choices.</p>
 
-<p>This whitepaper introduces the Valorem Options V1 protocol. Valorem 
+<p>This litepaper introduces the Valorem Options V1 protocol. Valorem 
 is a DeFi native options protocol which aims to provide superior flexibility 
 over existing options protocols by removing price oracles, reliance on existing 
 defi primitives, and premium value assumptions. Valorem achieves this by 
@@ -296,19 +296,33 @@ for price oracles. Option exercise happens at the discretion of the option
 holder. The only oracles in the protocol design are VRF for provably random and
 fair exercise assignment.</p>
 
+<h2 id="use-cases">Use cases</h2>
+
+<h3 id="writing-call-options">Writing call options</h3>
+
+<p>The Valorem protocol can be used to write covered call options with the payoff 
+\(max(0, - S_t)\).</p>
 
       </div>
     </article>
     <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
       <div class="fixed">
         <div class="label mb-6">On this page</div>
-        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#key-innovations" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Key innovations</a></li></ol></li></ol>
+        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#key-innovations" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Key innovations</a></li></ol></li><li class=""><a href="#use-cases" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Use cases</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#writing-call-options" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Writing call options</a></li></ol></li></ol>
       </div>
     </nav>
   </div>
 </div>
 <script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="/assets/js/tex-mml-chtml.js"></script></div>
+<!-- for mathjax support -->
+
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+        });
+      </script>
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</div>
 
     
     <footer class="bg-gray-200">
