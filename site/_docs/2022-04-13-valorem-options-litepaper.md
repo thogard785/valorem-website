@@ -19,9 +19,9 @@ emulate traditional options structures, the reliance on price oracles and
 assumptions around options premiums via models like black-scholes make them 
 inflexible and subject to adverse-selection. There are some recent protocols 
 which emulate options via single tick Uniswap V3 LPs. These are restricted by 
-the lack deployment of Uniswap V3 across evm chains, the gas inefficiency 
-of the Uniswap V3 LP NFT, and the nature of perpetual options, as 
-opposed to ones with fixed exercise and expiry timestamps. Present on chain 
+the lack of Uniswap V3 deployment across evm chains, gas inefficiency 
+of Uniswap V3 LP NFTs, and the nature of perpetual options (as 
+opposed to ones with fixed exercise and expiry timestamps). Present on chain 
 protocols are fundamentally limited by these design choices.
 
 This litepaper introduces the Valorem Options V1 protocol. Valorem 
@@ -73,7 +73,7 @@ fair exercise assignment.
 
 ## Use cases
 
-### Writing call options
+### Call options
 
 The Valorem protocol can be used to write covered call options with the payoff 
-$$max(0, - S_t)$$.
+$$\[\max(0,-S_T)\]$$ for the buyer.
