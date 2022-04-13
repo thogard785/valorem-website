@@ -1,6 +1,7 @@
 ---
 date: 2022-04-13 00:00:00 +01
 title: Valorem Options Litepaper
+usemathjax: true
 description: This litepaper introduces Valorem Options V1, an oracle-free, permissionless, physically settled options protocol for ERC20 tokens. 
 ---
 
@@ -23,7 +24,7 @@ of the Uniswap V3 LP NFT, and the nature of perpetual options, as
 opposed to ones with fixed exercise and expiry timestamps. Present on chain 
 protocols are fundamentally limited by these design choices.
 
-This whitepaper introduces the Valorem Options V1 protocol. Valorem 
+This litepaper introduces the Valorem Options V1 protocol. Valorem 
 is a DeFi native options protocol which aims to provide superior flexibility 
 over existing options protocols by removing price oracles, reliance on existing 
 defi primitives, and premium value assumptions. Valorem achieves this by 
@@ -70,3 +71,9 @@ for price oracles. Option exercise happens at the discretion of the option
 holder. The only oracles in the protocol design are VRF for provably random and
 fair exercise assignment.
 
+## Use cases
+
+### Writing call options
+
+The Valorem protocol can be used to write covered call options with the payoff 
+$$max(0, - S_t)$$.
