@@ -43,49 +43,34 @@
     <link rel="alternate" type="application/atom+xml" title="Valorem Protocol" href="/feed.xml" title="Valorem Protocol">
 
     
-    <title>Building a New Options Protocol | Valorem Protocol</title>
-<meta property="og:title" content="Building a New Options Protocol
+    <title>Valorem Options V1 Protocol Whitepaper</title>
+<meta property="og:title" content="Valorem Options V1 Protocol Whitepaper
 " />
 <meta name="author" content="Alcibiades" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A bit more about what we are building at Valorem and why we are building it.
+<meta name="description" content="Valorem Options V1 is an oracle-free, permissionless, physically settled options protocol for ERC20 tokens.
 " />
-<meta property="og:description" content="A bit more about what we are building at Valorem and why we are building it.
+<meta property="og:description" content="Valorem Options V1 is an oracle-free, permissionless, physically settled options protocol for ERC20 tokens.
 " />
-<link rel="canonical" href="https://valorem.xyz/blog/building-a-new-options-protocol/" />
-<meta property="og:url" content="https://valorem.xyz/blog/building-a-new-options-protocol/" />
+<link rel="canonical" href="https://valorem.xyz/docs/whitepaper/" />
+<meta property="og:url" content="https://valorem.xyz/docs/whitepaper/" />
 <meta property="og:site_name" content="Valorem Protocol" />
-<meta property="og:image" content="https://valorem.xyz/assets/images/posts/abstract-1.jpg" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-04-10T19:00:00-04:00" />
+<meta property="og:image" content="" /><meta property="og:type" content="website" /><meta property="article:published_time" content="2022-04-12T19:00:00-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://valorem.xyz/assets/images/posts/abstract-1.jpg" />
-<meta property="twitter:title" content="Building a New Options Protocol
+<meta property="twitter:image" content="" />
+<meta property="twitter:title" content="Valorem Options V1 Protocol Whitepaper
 " />
 <meta name="google-site-verification" content="" />
 
     <script type="application/ld+json">
     {
         "@context":"https://schema.org",
-        "@type":"BlogPosting",
-        "headline":"Building a New Options Protocol
+        "@type":"WebPage",
+        "name":"Valorem Options V1 Protocol Whitepaper",
+        "description":"Valorem Options V1 is an oracle-free, permissionless, physically settled options protocol for ERC20 tokens.
 ",
-        "image":"https://valorem.xyz/assets/images/posts/abstract-1.jpg",
-        "author":{
-            "@type":"Person",
-            "name":"Alcibiades",
-            "url":"https://valorem.xyz/about"
-        },
-        "datePublished":"2022-04-10T19:00:00-04:00",
-        "dateCreated":"2022-04-10T19:00:00-04:00",
-        "dateModified":"2022-04-13T10:36:05-04:00",
-        "description":"A bit more about what we are building at Valorem and why we are building it.
-",
-        "url":"https://valorem.xyz/blog/building-a-new-options-protocol/",
         "publisher":{
             "@type":"Organization",
-            "logo":{
-                "@type":"ImageObject",
-                "url":""
-            },
             "name":"Valorem Protocol"
         }
     }
@@ -113,29 +98,29 @@
 
 
 <header
-  class="s-xxs py-0 absolute w-full mt-8 z-50 transition-default"
+  class="w-full z-50 transition-default"
   x-data="{showMenu: false}">
-  <div class="bg-white rounded-xl lg:rounded-2xl s-xs max-w-screen-xl mx-auto transition-default"
-  :class="{'shadow-md rounded-b-none': showMenu}">
-    <nav class="flex justify-between items-center relative" aria-label="Main">
-      <a href="/" aria-label="Home page" class="text-purple-500"><svg width="258" height="58" viewBox="0 0 258 58" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-8 w-auto"><path d="M69.3577 14.5031H29.7265L39.6312 0H0L19.8156 29L29.7265 14.5031L39.6312 29H19.8156H0L19.8156 58L39.6312 29L49.5421 43.5031L69.3577 14.5031Z"/><path d="M101.3 18.6619H105.601L95.1249 41.5752H91.7861L81.1243 18.6619H85.7911L93.5672 36.0199L101.3 18.6619ZM126.055 18.6619H130.22V41.1673H126.055V37.2928C125.416 38.4298 123.219 41.7111 118.05 41.7111C112.104 41.7111 107.022 37.3361 107.022 29.9146C107.022 22.6229 112.098 18.1181 118.05 18.1181C123.033 18.1181 125.46 21.1707 126.055 22.4004V18.6619ZM126.142 29.9146C126.142 25.4036 123.213 21.9432 118.819 21.9432C114.245 21.9432 111.316 25.4036 111.316 29.9146C111.316 34.4256 114.245 37.8861 118.819 37.8861C123.219 37.8861 126.142 34.4256 126.142 29.9146ZM135.706 41.1673H139.87V7.63782H135.706V41.1673ZM168.374 29.9146C168.374 36.6131 163.204 41.7111 156.477 41.7111C149.706 41.7111 144.58 36.6069 144.58 29.9146C144.58 23.2223 149.706 18.1181 156.477 18.1181C163.204 18.1119 168.374 23.2161 168.374 29.9146ZM164.073 29.9146C164.073 25.4036 161.007 21.9432 156.477 21.9432C151.947 21.9432 148.881 25.4963 148.881 29.9146C148.881 34.3329 151.947 37.8861 156.477 37.8861C161.007 37.8861 164.073 34.4256 164.073 29.9146ZM177.155 22.8083V18.6619H172.991V41.1673H177.155V28.4563C177.155 24.4458 179.122 22.6229 184.931 22.6229H190.697V18.4765H185.024C179.718 18.4765 177.801 21.1646 177.155 22.8083ZM215.316 30.4151H196.512C196.741 34.6048 199.757 37.8861 204.201 37.8861C208.731 37.8861 210.562 35.4699 210.928 34.7407H215.049C214.683 36.6996 211.803 41.7111 204.207 41.7111C197.207 41.7111 192.31 36.5204 192.31 29.9146C192.31 23.1296 197.207 18.1181 203.791 18.1181C210.419 18.1119 215.316 23.0369 215.316 30.4151ZM210.692 26.9547C209.637 23.5375 207.217 21.6713 203.785 21.6713C200.123 21.6713 197.653 23.6734 196.785 26.9547H210.692V26.9547ZM248.35 18.1614C243.546 18.1614 240.983 21.4426 240.021 23.6301C238.557 20.3056 235.491 18.1614 231.463 18.1614C227.299 18.1614 224.736 20.9854 223.867 22.8083V18.6619H219.703V41.1673H223.867V29.0001C223.867 24.9464 226.474 21.9864 230.458 21.9864C234.3 21.9864 236.726 24.8104 236.726 29.0001V41.1612H240.934V29.0001C240.934 24.9464 243.54 21.9864 247.524 21.9864C251.366 21.9864 253.792 24.8104 253.792 29.0001V41.1612H258V28.2276C258 22.3943 254.065 18.1614 248.35 18.1614Z"/></svg></a>
-      <div class="z-10 hidden lg:flex items-center justify-end space-x-8 group">
+  <div class="s-xs border-b border-gray-400">
+    <div class="max-w-screen-xl mx-auto transition-default">
+      <nav class="flex justify-between items-center relative" aria-label="Main">
+        <a href="/" aria-label="Home page" class="text-purple-500"><svg width="258" height="58" viewBox="0 0 258 58" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-8 w-auto"><path d="M69.3577 14.5031H29.7265L39.6312 0H0L19.8156 29L29.7265 14.5031L39.6312 29H19.8156H0L19.8156 58L39.6312 29L49.5421 43.5031L69.3577 14.5031Z"/><path d="M101.3 18.6619H105.601L95.1249 41.5752H91.7861L81.1243 18.6619H85.7911L93.5672 36.0199L101.3 18.6619ZM126.055 18.6619H130.22V41.1673H126.055V37.2928C125.416 38.4298 123.219 41.7111 118.05 41.7111C112.104 41.7111 107.022 37.3361 107.022 29.9146C107.022 22.6229 112.098 18.1181 118.05 18.1181C123.033 18.1181 125.46 21.1707 126.055 22.4004V18.6619ZM126.142 29.9146C126.142 25.4036 123.213 21.9432 118.819 21.9432C114.245 21.9432 111.316 25.4036 111.316 29.9146C111.316 34.4256 114.245 37.8861 118.819 37.8861C123.219 37.8861 126.142 34.4256 126.142 29.9146ZM135.706 41.1673H139.87V7.63782H135.706V41.1673ZM168.374 29.9146C168.374 36.6131 163.204 41.7111 156.477 41.7111C149.706 41.7111 144.58 36.6069 144.58 29.9146C144.58 23.2223 149.706 18.1181 156.477 18.1181C163.204 18.1119 168.374 23.2161 168.374 29.9146ZM164.073 29.9146C164.073 25.4036 161.007 21.9432 156.477 21.9432C151.947 21.9432 148.881 25.4963 148.881 29.9146C148.881 34.3329 151.947 37.8861 156.477 37.8861C161.007 37.8861 164.073 34.4256 164.073 29.9146ZM177.155 22.8083V18.6619H172.991V41.1673H177.155V28.4563C177.155 24.4458 179.122 22.6229 184.931 22.6229H190.697V18.4765H185.024C179.718 18.4765 177.801 21.1646 177.155 22.8083ZM215.316 30.4151H196.512C196.741 34.6048 199.757 37.8861 204.201 37.8861C208.731 37.8861 210.562 35.4699 210.928 34.7407H215.049C214.683 36.6996 211.803 41.7111 204.207 41.7111C197.207 41.7111 192.31 36.5204 192.31 29.9146C192.31 23.1296 197.207 18.1181 203.791 18.1181C210.419 18.1119 215.316 23.0369 215.316 30.4151ZM210.692 26.9547C209.637 23.5375 207.217 21.6713 203.785 21.6713C200.123 21.6713 197.653 23.6734 196.785 26.9547H210.692V26.9547ZM248.35 18.1614C243.546 18.1614 240.983 21.4426 240.021 23.6301C238.557 20.3056 235.491 18.1614 231.463 18.1614C227.299 18.1614 224.736 20.9854 223.867 22.8083V18.6619H219.703V41.1673H223.867V29.0001C223.867 24.9464 226.474 21.9864 230.458 21.9864C234.3 21.9864 236.726 24.8104 236.726 29.0001V41.1612H240.934V29.0001C240.934 24.9464 243.54 21.9864 247.524 21.9864C251.366 21.9864 253.792 24.8104 253.792 29.0001V41.1612H258V28.2276C258 22.3943 254.065 18.1614 248.35 18.1614Z"/></svg></a>
+        <div class="z-10 hidden lg:flex items-center justify-end space-x-8 group">
+          
+          <a href="/about/"
+            class="p-2 rounded bg-white hover:bg-gray-200">About</a>
+          
+          <a href="/blog/"
+            class="p-2 rounded bg-white hover:bg-gray-200">Blog</a>
+          
+          <a href="/docs/"
+            class="p-2 rounded bg-white hover:bg-gray-200">Docs</a>
+          
+          
+          <a href="https://discord.gg/5jZdPuY9kR"
+            class="btn btn-purple-500 text-base px-5 py-2 rounded-xl">Join Discord</a>
+          
+        </div>
         
-        <a href="/about/"
-          class="p-2 rounded bg-white hover:bg-gray-200">About</a>
-        
-        <a href="/blog/"
-          class="p-2 rounded bg-white hover:bg-gray-200">Blog</a>
-        
-        <a href="/docs/"
-          class="p-2 rounded bg-white hover:bg-gray-200">Docs</a>
-        
-        
-        <a href="https://discord.gg/5jZdPuY9kR"
-          class="btn btn-purple-500 text-base px-5 py-2 rounded-xl">Join Discord</a>
-        
-      </div>
-      
 <div class="flex lg:hidden items-center justify-end space-x-8">
   <button
     aria-label="Navigation menu"
@@ -154,27 +139,35 @@
   </button>
 </div>
 
-    </nav>
+      </nav>
+    </div>
   </div>
   
-<div class="lg:hidden absolute left-0 right-0 w-full s-xs py-0 z-50">
+<div class="lg:hidden absolute left-0 right-0 w-full py-0 z-40">
   <div
-    class="transform origin-top shadow-lg rounded-b-xl lg:rounded-b-2xl bg-white"
+    class="transform origin-right shadow-md bg-white"
     x-show="showMenu"
     x-transition:enter="transition-default"
-    x-transition:enter-start="opacity-0 -translate-y-3"
-    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:enter-start="opacity-0 translate-x-3"
+    x-transition:enter-end="opacity-100 translate-x-0"
     x-transition:leave="transition-default"
-    x-transition:leave-start="opacity-100 translate-y-0"
-    x-transition:leave-end="opacity-0 -translate-y-3">
-    <nav class="s-sm py-10 text-center flex flex-col space-y-6" aria-label="Main">
+    x-transition:leave-start="opacity-100 translate-x-0"
+    x-transition:leave-end="opacity-0 translate-x-3">
+    <nav class="s-sm py-10 text-center flex flex-col gap-9" aria-label="Main">
       
-      <a href="/about/" class="focus:text-purple-500 focus:outline-none">About</a>
+      <div class="flex flex-col gap-3">
+      <div class="label">Documentation</div>
       
-      <a href="/blog/" class="focus:text-purple-500 focus:outline-none">Blog</a>
       
-      <a href="/docs/" class="focus:text-purple-500 focus:outline-none">Docs</a>
+      <a href="/docs/what-is-valorem/" class="focus:text-purple-500 focus:outline-none">What is Valorem?</a>
       
+      <a href="/docs/smart-contracts-overview/" class="focus:text-purple-500 focus:outline-none">Smart Contracts Overview</a>
+      
+      <a href="/docs/whitepaper/" class="focus:text-purple-500 focus:outline-none">Valorem Options V1 Protocol Whitepaper</a>
+      
+      </div>
+      
+      <hr class="border-gray-400">
       
       <a href="https://discord.gg/5jZdPuY9kR"
         class="btn btn-purple-500 text-base px-5 py-2 rounded-xl mx-auto">Join Discord</a>
@@ -208,70 +201,114 @@
 
 
 
-<section class="s-hero bg-gradient-default from-purple-500 to-white">
-  <div class="max-w-screen-lg mx-auto space-y-16 text-center">
-    <div class="inline-block label text-white py-2 px-3 rounded-md bg-purple-500 bg-opacity-25">Apr 10, 2022</div>
-    <h1 class="text-gray-900">Building a New Options Protocol</h1>
-    
-    <div class="text-xl lg:text-2xl"><p>A bit more about what we are building at Valorem and why we are building it.</p>
+<div class="s-md">
+  <div class="max-w-screen-xl mx-auto w-full lg:flex lg:gap-12">
+    <nav class="flex-shrink-0 w-60 hidden lg:block">
+      <div class="fixed">
+        
+        <div class="label mb-3">Documentation</div>
+        <ol class="mb-6 text-sm">
+          
+          
+          <li>
+            <a href="/docs/what-is-valorem/" class="block py-3 px-6 rounded-md hover:bg-gray-200">What is Valorem?</a>
+          </li>
+          
+          <li>
+            <a href="/docs/smart-contracts-overview/" class="block py-3 px-6 rounded-md hover:bg-gray-200">Smart Contracts Overview</a>
+          </li>
+          
+          <li>
+            <a href="/docs/whitepaper/" class="block py-3 px-6 rounded-md text-gray-900 bg-gray-cool">Valorem Options V1 Protocol Whitepaper</a>
+          </li>
+          
+        </ol>
+        
+      </div>
+    </nav>
+    <article class="lg:flex-grow">
+      <div class="prose">
+        <h1>Valorem Options V1 Protocol Whitepaper</h1>
+        <hr>
+        <h2 id="introduction">Introduction</h2>
+
+<p>Options are a primitive essential to the functioning of any financial system. 
+In traditional finance, options volume exceeds spot volume. In the world of 
+digital assets, spot volumes still exceed options trading volumes. Options 
+trading volumes on assets like BTC and ETH have grown significantly in the 
+past year, both on centralized exchanges such as Deribit, and on-chain 
+protocols.</p>
+
+<p>There are already a number of on-chain options protocols. While most of these 
+emulate traditional options structures, the reliance on price oracles and 
+assumptions around options premiums via models like black-scholes make them 
+inflexible and subject to adverse-selection. There are some recent protocols 
+which emulate options via single tick Uniswap V3 LPs. These are restricted by 
+the lack deployment of Uniswap V3 across evm chains, the gas inefficiency 
+of the Uniswap V3 LP NFT, and the nature of perpetual options, as 
+opposed to ones with fixed exercise and expiry timestamps. Present on chain 
+protocols are fundamentally limited by these design choices.</p>
+
+<p>This whitepaper introduces the Valorem Options V1 protocol. Valorem 
+is a DeFi native options protocol which aims to provide superior flexibility 
+over existing options protocols by removing price oracles, reliance on existing 
+defi primitives, and premium value assumptions. Valorem achieves this by 
+implementing an options settlement protocol driven by market forces and settled 
+in a provably fair and random ordering using VRF. The Valorem Options V1 
+protocol consists of a set of smart contracts which can interact directly with 
+any non-rebasing, non-fee on transfer, ERC20 token pair to handle the minting 
+and exercise settlement of any put or call options in a permissionless and 
+trustless manner.</p>
+
+<h3 id="key-innovations">Key Innovations</h3>
+
+<h4 id="permissionless">Permissionless</h4>
+
+<p>The Valorem protocol is designed to be permissionless. This permissionless
+design means that the protocol is open to public use, with no ability to restrict
+who can or cannot use it. Anyone can create new options chains, write options,
+exercise the options they hold, transfer those options, and transfer claims
+generated during writing.</p>
+
+<h4 id="fully-collateralized">Fully Collateralized</h4>
+
+<p>The protocol being fully collateralized means that options can be exercised at
+any time prior to expiry and after the exercise timestamp, without the risk of
+default. This design choice was made due to the nature of decentralization and
+the permissionless nature of the protocol.</p>
+
+<h4 id="composibility">Composibility</h4>
+
+<p>The Valorem protocol allows writers to write options on any ERC-20 pair, with
+any strike price, any expiry timestamp at least 24 hours in the future, and
+any exercise timestamp at least 24 hours before expiry. This flexibility enables
+the settlement layer to be used in a large range of applications. Options 
+contracts are issued as fungible ERC-1155 tokens, herein referred to as
+vTokens, with each token representing a contract. Option writers are
+additionally issued an ERC-1155 NFT representing a lot of contracts written
+for claiming collateral and exercise assignment. These tokens allow for novel 
+structured products to be created atop the protocol.</p>
+
+<h4 id="oracle-lite">Oracle-lite</h4>
+
+<p>Part of what enables the flexibility for the protocol, is the absence of a need
+for price oracles. Option exercise happens at the discretion of the option
+holder. The only oracles in the protocol design are VRF for provably random and
+fair exercise assignment.</p>
+
+
+      </div>
+    </article>
+    <nav class="flex-shrink-0 w-60 text-sm hidden xl:block">
+      <div class="fixed">
+        <div class="label mb-6">On this page</div>
+        <ol class="border-l-2 border-gray-300" id="my_toc"><li class=""><a href="#introduction" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Introduction</a><ol class="ml-3 sm:ml-6 border-l-2 border-gray-300"><li class=""><a href="#key-innovations" class="block py-1 pl-3 sm:pl-6 -ml-1 border-l-4 border-transparent hover:border-purple-500 hover:text-purple-500 space-y-4">Key Innovations</a></li></ol></li></ol>
+      </div>
+    </nav>
+  </div>
 </div>
-    
-    <div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="s-md">
-  <article class="max-w-screen-xl mx-auto prose text-base sm:text-lg">
-    <h3 id="where-we-are">Where we are</h3>
-
-<p>We started building a new option protocol last month. We’ve been working 
-rapidly towards a minimum viable product, and are pleased to announce that 
-Valorem will be launching on the Harmony testnet later this week. We are 
-excited to start onboarding some Alpha testers via our
-<a href="https://discord.gg/5jZdPuY9kR">Discord</a>.
-Please join and let us know if you want to be an early tester.</p>
-
-<h3 id="where-we-are-going">Where we are going</h3>
-
-<p>That’s the beginning, but after that there is a lot more to be built. We 
-are planning a UI and Harmony Mainnet launch for May first. We are also 
-starting to design some of the broader tokenomics for an ecosystem of 
-structured products which will overlay the settlement layer. More to follow
-on that, along with a few examples of how to build structured products atop
-Valorem.</p>
-
-<h3 id="how-we-are-going-to-get-there">How we are going to get there</h3>
-
-<p>This week we have solidity developer from <a href="https://www.raidguild.org/">Raid Guild</a> 
-doing reviews on the settlement layer before the testnet launch, we have a 
-subgraph developer starting to roll on queries for the protocol to provide 
-user insights and support the UI, and we have a UI developer cranking on a 
-react app for those not wanting to pilot the testnet on a block scanner.</p>
-
-<p>We look forward to the feedback from our users, and in choosing two or three 
-two sided structured product designs to build for writers and option holders 
-to use. One use case we are immediately excited to build, is vesting options 
-for protocol contributor renumeration.</p>
-
-<p>What would you like to see? Let us know in our discord.</p>
-
-
-  </article>
-</section>
-
-
-<section class="s-lg bg-gradient-default from-purple-400 to-white">
-  <div class="max-w-4xl mx-auto text-center space-y-12">
-    <h2 class="text-gray-900">App coming soon. In the meantime, join our Discord server to get early beta access to our testnet release.</h2>
-    <div>
-      
-      <a href="https://discord.gg/5jZdPuY9kR" class="btn btn-purple-500 btn--large even:btn--outlined">Join Discord</a>
-      
-    </div>
-  </div>
-</section></div>
+<script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="/assets/js/tex-mml-chtml.js"></script></div>
 
     
     <footer class="bg-gray-200">
