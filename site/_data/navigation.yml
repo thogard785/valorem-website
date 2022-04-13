@@ -57,6 +57,10 @@ navigation_links_docs:
     name: Smart Contracts Overview
     group:
       - documentation
+  - url: /docs/whitepaper/
+    name: Valorem Options V1 Protocol Whitepaper
+    group:
+      - documentation
 
 docs_groups:
   - documentation
