@@ -73,7 +73,20 @@ fair exercise assignment.
 
 ## Use cases
 
+Where:
+
+$ S_T $ is the price of the underlying asset at expiration; and
+$ X $ is the exercise asset price; and
+$ p_0 $ is the premium paid.
+
 ### Call options
 
-The Valorem protocol can be used to write covered call options with the payoff 
-$ max(0,-S_T) $ for the buyer.
+The Valorem protocol can be used to create covered call options with the payoff 
+$ max(0,S_T-X) $ for the holder, and the payoff  $ -max(0,S_T-X) $ for the 
+writer.
+
+### Put options
+
+The Valorem protocol can be used to create covered put options with the payoff
+$ max(0,X-S_T) $ for the holder, and the payoff  $ -max(0,X-S_T) $ for the 
+writer.
