@@ -206,8 +206,6 @@ option would be exercised or sold in the money upon the user’s redemption of
 the structured product, and the user would capture the upside without risk of 
 initial principle.
 
-Aligning Developer/Protocol Incentives with Vesting Bonuses (cred: cryptotom)
-
 ### Vesting Options
 
 Although many options writers may focus on the contract’s expiration date, 
@@ -218,7 +216,7 @@ uses cases for being able to effectively "post date a check" in DeFi, one
 that may be of particular interest to protocol developers is the ability to 
 create the DeFi version of an Employee Stock Option (ESO) with a cliff vesting
 schedule set via the option’s earliest exercise date. Protocols could 
-implement Valorem into their `vaults` and issue these DeFi equivalents of 
+implement Valorem into their vaults and issue these DeFi equivalents of 
 ESOs called Developer Token Options (DTO) to developers in key roles. 
 This would align the selected developers’ financial compensation with 
 the long term success of the protocol thereby decreasing the likelihood of 
