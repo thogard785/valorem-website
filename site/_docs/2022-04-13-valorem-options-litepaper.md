@@ -109,7 +109,7 @@ conditions:
 - The owner of the `option` token has enough of the exercise token required
   to purchase the amount of the underlying token at the strike price.
 
-### Redeeming Options:
+### Redeeming Options
 Owners of a `claim` token can exercise their claim to the collateral in the 
 Valorem protocol vault once the expiration date of the option has passed. 
 If the collateral associated with their claims token was assigned during 
