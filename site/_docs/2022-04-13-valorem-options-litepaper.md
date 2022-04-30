@@ -7,25 +7,25 @@ description: This litepaper introduces Valorem Options V1, an oracle-free, permi
 
 ## Introduction
 
-Options are a component, essential to the functioning of any financial system. 
-In traditional finance, options volume exceeds spot volume. In the world of 
-digital assets, spot volumes still exceed options trading volumes. Options 
-trading volumes on assets like BTC and ETH have grown significantly in the 
-past year, both on centralized exchanges such as Deribit, and on-chain 
-protocols.
+Options are an essential component in high-functioning financial systems. 
+In traditional finance, options volume exceeds spot volume, but in  
+blockchain finance, spot volumes still exceed options trading volumes. Although options 
+trading volume on assets like BTC and ETH has grown significantly in the 
+past year--both on centralized exchanges such as Deribit, and on-chain 
+protocols--it is clear that significant untapped market opportunities remain.
 
-There are already a number of on-chain options protocols. While most of these 
+There are already a number of on-chain options market making protocols. While most of these trade products that 
 emulate traditional options structures, the reliance on price oracles and 
-assumptions around options premiums via models like black-scholes make them 
-inflexible and subject to adverse-selection. There are some recent protocols 
-which emulate options via single tick Uniswap V3 LPs. These are restricted by 
+assumptions around option premiums via models such as black-scholes make them 
+inflexible and subject to toxic orderflow. Recently, protocols 
+synthesizing options via single tick Uniswap V3 LPs have emerged, but they are restricted by 
 the lack of Uniswap V3 deployment across evm chains, gas inefficiency 
-of Uniswap V3 LP NFTs, and the nature of perpetual options (as 
-opposed to ones with fixed exercise and expiry timestamps) present on chain 
-protocols are fundamentally limited by these design choices.
+of Uniswap V3 LP NFTs, and the pricing limitations of perpetual options (as 
+opposed to ones with fixed exercise and expiry timestamps).
 
+*
 This litepaper introduces the Valorem Options V1 protocol. Valorem 
-is a DeFi native options protocol which aims to provide superior flexibility 
+is a DeFi-native options protocol that provides superior flexibility 
 over existing options protocols by removing price oracles, reliance on existing 
 defi primitives, and premium value assumptions. Valorem achieves this by 
 implementing an options settlement protocol driven by market forces and settled 
@@ -34,29 +34,29 @@ protocol consists of a set of smart contracts which can interact directly with
 any non-rebasing, non-fee on transfer, ERC20 token pair to handle the minting 
 and exercise settlement of any put or call options in a permissionless and 
 trustless manner.
+*
+//^ I can’t help but think that this isn’t doing a good job of explaining the protocol. IMO we should focus more on ‘clearinghouse vs market maker’ dynamic. The above paragraph makes it seem like we’re competing with market makers and doing a better job, which isn’t accurate.
 
 ### Key innovations
 
 #### Permissionless
 
-The Valorem protocol is designed to be permissionless. This permissionless
-design means that the protocol is open to public use, with no ability to restrict
-who can or cannot use it. Anyone can create new options chains, write options,
+The Valorem protocol is permissionless; the protocol is open to public use with no ability to restrict
+who can or cannot use it. Any potential user can create a new option chain, write options,
 exercise the options they hold, transfer those options, and transfer claims
 generated during writing.
 
 #### Fully collateralized
 
-The protocol being fully collateralized means that options can be exercised at
+The protocol is fully collateralized; options can be exercised at
 any time prior to expiry and after the exercise timestamp, without the risk of
 default. This design choice was made due to the nature of decentralization and
 the permissionless nature of the protocol.
 
-#### Composibility
+#### Composability
 
-The Valorem protocol allows writers to write options on any ERC-20 pair, with
-any strike price, any expiry timestamp at least 24 hours in the future, and
-any exercise timestamp at least 24 hours before expiry. This flexibility enables
+The Valorem protocol is composable(sp?); it allows writers to write options on any ERC-20 pair and use any strike price, any expiry timestamp at least 24 hours in the future, and
+any exercise timestamp at least 24 hours before expiration date. This flexibility enables
 the settlement layer to be used in a large range of applications. Options 
 contracts are issued as fungible ERC-1155 tokens, herein referred to as
 vTokens, with each token representing a contract. Option writers are
@@ -66,34 +66,32 @@ structured products to be created atop the protocol.
 
 #### Oracle-lite
 
-Part of what enables the flexibility for the protocol, is the absence of a need
-for price oracles. Option exercise happens at the discretion of the option
-holder. The only oracles in the protocol design are VRF for provably random and
+The Valorem protocol’s only use of oracles is to generate randomness. Part of what enhances the protocol’s flexibility is the absence of a need
+for price oracles. The exercise of options contracts happens at the discretion of the option
+holder. The only oracles in the protocol design are chainlink VRF for provably random and
 fair exercise assignment.
 
 ## Protocol Description
 
-The Valorem protocol acts as an underwriting aide and clearinghouse for options 
-which are tokenized for owership on EVM blockchains.  The protocol allows the 
-following actions:
+The Valorem protocol acts as an underwriter and clearinghouse for writing and exercising options contracts and as a custodian and assignment engine for the options’ underlying collateral.   
+Both the options contract and the underlying collateral are tokenized for ownership on EVM blockchains.  The protocol allows the following actions:
 
 ### Writing Options
 
-Actors on chain, either individuals using their wallets or protocols using smart
-contracts, can write options by depositing the necessary collateral into the 
+Actors on chain--either individuals using their wallets or protocols using smart
+contracts--can write options by depositing the necessary collateral into the 
 Valorem vault. They can specify the following:
 
-- The underlying collateral of the option, this is what the option owner receives 
+- The underlying collateral of the option; this is what the option owner receives 
   if the option is exercised.
-- The exercise token of the option,  this is what the option owner pays, and 
-  what the option writer receives, if the option is exercised.
+- The exercise token of the option;  this is what the option owner pays, and 
+  what the option writer receives; if the option is exercised.
 - The expiration date of the option.
 - The earliest exercise date of the option.
 - The strike price of the option.
 
 This information comprises a unique hash `keccak256(abi.encode(Option memory))`, 
-which is then used to determine if that type of option already exists, and if 
-not, create it. Once the option type is created, upon writing, the option 
+which is then used to determine if that type of option already exists and, if it doesn’t, create it. Once the option type is created, upon writing, the option 
 writer will receive a `claim` token indicating that they have written the option.
 They will also receive an `option` token, indicating that they have the ability
 to exercise the option pursuant to the terms set during writing.  Both the 
@@ -159,7 +157,7 @@ writer.
 The Valorem protocol provides web3 developers with an options base layer 
 that can be seamlessly integrated into existing and future AMMs and CLOBs. 
 By acting as the clearinghouse and settlement service needed for options 
-execution, Valorem allows market makers to list options on without the 
+execution, Valorem allows market makers to trade options without the 
 need to implement their own options-specific smart contract adjustments,
 risk management system, or collateral assignment process. This frees up 
 MMs to focus on raising capital/liquidity, improving their pricing 
@@ -177,14 +175,14 @@ derivatives, are financial products created by combining two or more
 financial instruments into a single, tradeable item that is typically secured 
 by the underlying instruments held as collateral by the underwriter.  Many 
 structured product underwriters do not focus on trading the underlying 
-products, instead, the underwriters’ goal is to handle the execution, 
+products; instead, the underwriters’ goal is to handle the execution, 
 assignment, and transfer of the underlying in an efficient manner to minimize the 
-structured product’s price volatility due to the settlement operations of 
-the underlying.  By acting as an efficient clearinghouse, the Valorem protocol
+structured product’s price volatility from settlement operations.  
+By acting as an efficient clearinghouse, the Valorem protocol
 allows structured product protocols to bypass open market actions such as the
 sale of underlying options.  If an appropriate counter-party has been 
 identified, and the counter party’s protocol has also integrated the Valorem 
-protocol into its smart contracts, then the entire structured note creation 
+protocol into its smart contracts, then the entire structured product creation 
 process could be fully automated upon receipt of the purchaser’s intent to 
 purchase. The Valorem protocol’s unique vault mechanism decreases the credit 
 risk of the product by guaranteeing the full availability of the collateral 
@@ -208,8 +206,8 @@ initial principle.
 
 ### Vesting Options
 
-Although many options writers may focus on the contract’s expiration date, 
-the Valorem protocol also provides them with the ability to set an earliest 
+Although price-sensitive options writers may focus on the contract’s expiration date, 
+the Valorem protocol also provides writers with the ability to set an earliest 
 exercise date. Users holding these options are blocked from exercising them 
 until the earliest exercise date has passed. While there are many possible 
 use cases for being able to effectively "post date a check" in DeFi, one 
@@ -229,7 +227,7 @@ Although AMMs are often the first type of DeFi entity to be associated with
 options, the Valorem protocol was designed as a base layer that can be 
 integrated by virtually any user type. One extremely niche use case for 
 Valorem is to enable lending protocols to manage the risk of accepting 
-deposits of untested collateralized stable tokens*. On deposit of the 
+deposits of untested collateralized stable tokens. On deposit of the 
 collateralized stable token into the lending protocol, the lending protocol 
 would require the collateralized stable token protocol to write put options 
 against assets (ideally other, safer stable tokens) in the collateralized 
